@@ -8,9 +8,9 @@ This analysis is to more fully assess the collinearity of the predictors and der
 
 
 
-## Plots of the relationships between Kd, Lake Area, and Julian Day
+## Analysis of the relationships between Kd, Lake Area, and Julian Day
 
-### R code for the analysis
+### Import Data
 
 ~~~~
 
@@ -20,6 +20,10 @@ This analysis is to more fully assess the collinearity of the predictors and der
 
 # load the boondoggle workingspace with the data
 load("./data/boondoggle")
+
+~~~~
+
+### Code of Plots the relationships between the predictors
 
 # plot the relationship between the predictors
 plot(Kd ~ Area, data = boon.tot, type = "n")
@@ -46,13 +50,13 @@ points(TD ~ Julian, data = boon.tot, subset = Year == 2007, col = 3)
 points(TD ~ Julian, data = boon.tot, subset = Year == 2008, col = 4)
 legend(60, 0.9, c("2006", "2007", "2008"), pch = 1, col = c(2, 3, 4))
 
-
-# determine distribution of the Area
-stem(boon.tot$Area)
-
 ~~~~
 
-> stem(boon.tot$Area)
+### Determine the distribution of the Area values
+
+~~~~
+# determine distribution of the Area
+stem(boon.tot$Area)
 
   The decimal point is 1 digit(s) to the right of the |
 
@@ -65,7 +69,7 @@ stem(boon.tot$Area)
   6 | 
   7 | 77
 
->
+~~~~
 
 
 ### Correlation Analysis with and without extreme Area Values
@@ -75,9 +79,6 @@ stem(boon.tot$Area)
 # 2006 with largest lake 
 cor.test(boon.tot$Kd[boon.tot$Year == 2006], boon.tot$Area[boon.tot$Year == 2006])
 
-~~~~
-
-> cor.test(boon.tot$Kd[boon.tot$Year == 2006], boon.tot$Area[boon.tot$Year == 2006])
 
 	Pearsons product-moment correlation
 
@@ -90,14 +91,8 @@ sample estimates:
        cor 
 -0.3517087 
 
-~~~~
-
 # 2006 without largest lake 
 cor.test(boon.tot$Kd[boon.tot$Year == 2006 & boon.tot$Area != max(boon.tot$Area)], boon.tot$Area[boon.tot$Year == 2006 & boon.tot$Area != max(boon.tot$Area)])
-
-~~~~
-
-> cor.test(boon.tot$Kd[boon.tot$Year == 2006 & boon.tot$Area != max(boon.tot$Area)], boon.tot$Area[boon.tot$Year == 2006 & boon.tot$Area != max(boon.tot$Area)])
 
 	Pearsons product-moment correlation
 
@@ -110,14 +105,8 @@ sample estimates:
        cor 
 -0.4085476 
 
-~~~~
-
 # 2007 - there were no outlying lakes
 cor.test(boon.tot$Kd[boon.tot$Year == 2007], boon.tot$Area[boon.tot$Year == 2007])
-
-~~~~
-
-> cor.test(boon.tot$Kd[boon.tot$Year == 2007], boon.tot$Area[boon.tot$Year == 2007])
 
 	Pearsons product-moment correlation
 
@@ -130,14 +119,8 @@ sample estimates:
       cor 
 0.1176796 
 
-~~~~
-
 # 2008 with largest lake
 cor.test(boon.tot$Kd[boon.tot$Year == 2008], boon.tot$Area[boon.tot$Year == 2008])
-
-~~~~
-
-> cor.test(boon.tot$Kd[boon.tot$Year == 2008], boon.tot$Area[boon.tot$Year == 2008])
 
 	Pearsons product-moment correlation
 
@@ -150,12 +133,8 @@ sample estimates:
        cor 
 -0.6831595 
 
-~~~~
-
 # 2008 w/out largest lake
 cor.test(boon.tot$Kd[boon.tot$Year == 2008 & boon.tot$Area != max(boon.tot$Area)], boon.tot$Area[boon.tot$Year == 2008 & boon.tot$Area != max(boon.tot$Area)])
-
-> cor.test(boon.tot$Kd[boon.tot$Year == 2008 & boon.tot$Area != max(boon.tot$Area)], boon.tot$Area[boon.tot$Year == 2008 & boon.tot$Area != max(boon.tot$Area)])
 
 	Pearsons product-moment correlation
 
@@ -168,15 +147,11 @@ sample estimates:
        cor 
 -0.6952108
 
-~~~~
-
 # all years together
 
 cor.test(boon.tot$Kd, boon.tot$Area)
 cor.test(boon.tot$Kd, boon.tot$Julian)
 cor.test(boon.tot$TD, boon.tot$Julian)
-
-~~~~
 
 > cor.test(boon.tot$Kd, boon.tot$Area)
 
@@ -217,17 +192,12 @@ sample estimates:
       cor 
 0.6250315 
 
-## Linear models of the relationship between the variables
+### Linear models of the relationship between the variables
 
 ~~~~
 
 # Kd against Area
 summary(lm(Kd ~ Area, data = boon.tot))
-
-~~~~
-
-> # Kd against Area
-> summary(lm(Kd ~ Area, data = boon.tot))
 
 Call:
 lm(formula = Kd ~ Area, data = boon.tot)
@@ -247,17 +217,12 @@ Residual standard error: 0.1907 on 45 degrees of freedom
 Multiple R-squared: 0.1171,	Adjusted R-squared: 0.09743 
 F-statistic: 5.966 on 1 and 45 DF,  p-value: 0.01858 
 
-~~~~
-
 # Kd against Area w/out extreme area values
 
 summary(lm(Kd ~ Area, data = boon.tot, subset = Area != max(Area[Year == 2006]) & Area != max(Area[Year == 2008])))
+# plot of the relationship
 plot(Kd ~ Area, data = boon.tot, subset = Area != max(Area[Year == 2006]) & Area != max(Area[Year == 2008]))
 abline(lm(Kd ~ Area, data = boon.tot, subset = Area != max(Area[Year == 2006]) & Area != max(Area[Year == 2008])))
-
-~~~~
-
-> summary(lm(Kd ~ Area, data = boon.tot, subset = Area != max(Area[Year == 2006]) & Area != max(Area[Year == 2008])))
 
 Call:
 lm(formula = Kd ~ Area, data = boon.tot, subset = Area != max(Area[Year == 
@@ -278,14 +243,8 @@ Residual standard error: 0.1929 on 43 degrees of freedom
 Multiple R-squared: 0.08107,	Adjusted R-squared: 0.05969 
 F-statistic: 3.793 on 1 and 43 DF,  p-value: 0.05801 
 
-~~~~
-
 # Kd against Julian
 summary(lm(Kd ~ Julian, data = boon.tot))
-
-~~~~
-
-> summary(lm(Kd ~ Julian, data = boon.tot))
 
 Call:
 lm(formula = Kd ~ Julian, data = boon.tot)
@@ -305,8 +264,10 @@ Residual standard error: 0.1787 on 45 degrees of freedom
 Multiple R-squared: 0.2243,	Adjusted R-squared: 0.2071 
 F-statistic: 13.01 on 1 and 45 DF,  p-value: 0.0007721 
 
+~~~~
+
 ## Conclusions
 
-There is some collinearity between Kd and Area but it is rather small.  The correlation coeff = -0.34 for all years together and a liner regression between Kd and Area gives an R^2^ of only 0.1.  Further some of the relationship seems to be driven by 2 very large lakes, removing these weakens the relationship between Kd and Area.
+There is some collinearity between Kd and Area but it is rather small.  The correlation coeff = -0.34 for all years together and a liner regression between Kd and Area gives an R^2 of only 0.1.  Further some of the relationship seems to be driven by 2 very large lakes, removing these weakens the relationship between Kd and Area.
 
-There is also some collinearity between Kd and Julian day which is greater than for Area but still rather modest.  The correlation coeff for all years is -0.47 for all years together and a linear regression between Kd and Julian gives an R^2^ of 0.2
+There is also some collinearity between Kd and Julian day which is greater than for Area but still rather modest.  The correlation coeff for all years is -0.47 for all years together and a linear regression between Kd and Julian gives an R^2 of 0.2
