@@ -36,19 +36,19 @@ plot(Kd ~ Julian, data = boon.tot, type = "n")
 points(Kd ~ Julian, data = boon.tot, subset = Year == 2006, col = 2)
 points(Kd ~ Julian, data = boon.tot, subset = Year == 2007, col = 3)
 points(Kd ~ Julian, data = boon.tot, subset = Year == 2008, col = 4)
-legend(60, 0.9, c("2006", "2007", "2008"), pch = 1, col = c(2, 3, 4))
+legend(200, 0.9, c("2006", "2007", "2008"), pch = 1, col = c(2, 3, 4))
 
 plot(TD ~ Kd, data = boon.tot, type = "n")
 points(TD ~ Kd, data = boon.tot, subset = Year == 2006, col = 2)
 points(TD ~ Kd, data = boon.tot, subset = Year == 2007, col = 3)
 points(TD ~ Kd, data = boon.tot, subset = Year == 2008, col = 4)
-legend(60, 0.9, c("2006", "2007", "2008"), pch = 1, col = c(2, 3, 4))
+legend(0.8, 10, c("2006", "2007", "2008"), pch = 1, col = c(2, 3, 4))
 
 plot(TD ~ Julian, data = boon.tot, type = "n")
 points(TD ~ Julian, data = boon.tot, subset = Year == 2006, col = 2)
 points(TD ~ Julian, data = boon.tot, subset = Year == 2007, col = 3)
 points(TD ~ Julian, data = boon.tot, subset = Year == 2008, col = 4)
-legend(60, 0.9, c("2006", "2007", "2008"), pch = 1, col = c(2, 3, 4))
+legend(195, 10, c("2006", "2007", "2008"), pch = 1, col = c(2, 3, 4))
 
 ~~~~
 
@@ -263,6 +263,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 0.1787 on 45 degrees of freedom
 Multiple R-squared: 0.2243,	Adjusted R-squared: 0.2071 
 F-statistic: 13.01 on 1 and 45 DF,  p-value: 0.0007721 
+
+# with lake as a covatiate
+summary(lm(Kd ~ Julian, data = boon.tot, subset = Year != 2007))
 
 ~~~~
 

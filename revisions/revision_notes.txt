@@ -32,7 +32,17 @@
 ## 11 June 2013
 
 1. moved "boondoggle" workspace into revision_analysis folder
-2. 
+
+## 17 June 2013
+
+1. Added a more detailed description of the justification for using the linier model of Kd, Area, and Julian to predict TD, even though they are collinear.  Based this on the modest collinearity and the independent assessment of these factors as important for determining TD. (ln 224; right after model description)
+2. Added Gorham and Boyce as a reference to the TD surface area relationship and to lit cited
+3. Added Blanton 1973 as a reference to the TD deepening relationship and to lit cited
+4. Modified the Lake Survey results to better reflect the collinearity between Kd, Area, and Julian day.  Removed the correlation data and added the results of the linear regression between Kd and Area with and w/o GTH 68.  Removed the correlation data for the Kd and Julian relationship and folded this into the same analysis where the difference between years is discussed. (ln 235)
+5. Altered the methods (Stats) to reflect the use of regression for Kd vs Area and the removal of the test of Julian day (ln 163)
+6. Removed the "accurate" description from the Case Study Discussion and just say that the model reproduced the slope of the changes. (ln 392)
+7.
+
 ##########################################################################################
 
 # Text Dump
@@ -47,8 +57,11 @@ Recently Gudasz et al. (2010) estimated that predicted climate warming will resu
 
 ##########################################################################################
 
-Reviewer 2 questioned the fact that oxygen concentration was not explicitly controlled during the measurement of anoxic mineralization.  The lakes in this region of the arctic and those included in the study do not regularly go anoxic and thus we were not assessing the effect of anoxic conditions on mineralization but rather evaluating the relationship between oxygen concentration of the overlying water and SOD.  We tested the effect of oxygen availability on SOD by manipulating the availability of oxygen by extending the incubation time.  To clarify this point we added additional text to the methods section on the sediment incubations. (10 Jun rev 7)
+Reviewer D questioned the fact that oxygen concentration was not explicitly controlled during the measurement of anoxic mineralization.  The lakes in this region of the arctic and those included in the study do not regularly go anoxic and thus we were not assessing the effect of anoxic conditions on mineralization but rather evaluating the relationship between oxygen concentration of the overlying water and SOD.  We tested the effect of oxygen availability on SOD by manipulating the availability of oxygen by extending the incubation time.  To clarify this point we added additional text to the methods section on the sediment incubations. (10 Jun rev 7)
 
+Reviewer D notes that the factors included in the linear model of thermocline depth by Kd, Area, and Julian Day were somewhat collinear, which can bias the independent estimation of the slope for each term.  We acknowledge that there is some collinearity between the predictors but it is fairly modest.  The R^2 of the relationship between Kd and Area is only 0.1 and the R^2 of the relationship between Kd and Julian Day is only 0.2.  While any collinearity between the predictors makes it impossible to completely independently estimate the this modest collinearity should still make it possible to get a reasonable estimate of the relationship between the predictors and the thermocline depth.  Furthermore, previous studies have shown that each of the predictors included in the model are important drivers of thermocline depth.  Lake area can affect thermocline depth through variation in wind mixing intensity related to fetch. Time since stratification (i.e., Julian Day) can affect thermocline depth via the continued deepening of the thermocline over time. Given the modest collinearity between the predictors, the prior evidence that these factors should be important for estimating thermocline depth, and the accuracy with which the model estimates the thermocline depth of GTH 91, we feel justified in using this model.  In response to these concerns, we attempted to model the thermocline depth of Lake GTH 91 without using the collinear predictors (i.e., just single predictors), and none of the models did as good of a job representing the changes in thermocline depth in GTH 91 as the model with all of the predictors.  To clarify the limitations of our model and our justification for using the this model we have changed the treatment of the relationship between Kd and Area, highlighting the magnitude of the relationship in the results and the effect of Lake GTH 68 which was the largest lake and somewhat skewed the results.  
+
+Reviewer D expresses concern that Julian Day is significant in the model despite the fact that there are only 2 julian days in the original survey.  Due to the well established relationship between thermocline depth and time since stratification, we feel justified considering the time in the summer as a factor affecting thermocline depth.  However with only 2 points it is possible that we are finding a linear relationship when there is another shape to the change in thermocline depth with time.  We do not have additional dates from the survey lakes but the actual change in thermocline depth with julian day in GTH 91 (Fig. 8 solid line, open circles) shows a very linear change in thermocline depth with julian day.  Given this, it seems reasonable to assume that relationship between thermocline depth and julian day in the survey lakes is also linear.
 
 ##########################################################################################
 
@@ -152,7 +165,7 @@ changes in Kd might affect sediment organic matter mineralization under one
 temperature and Kd scenario.  These future projections are based on a large
 number of assumptions and on sparse data which I find are not all supported:
 
-[ ]1.      They state that thermocline depth in GTH 91 was predicted from the
+[X]1.      They state that thermocline depth in GTH 91 was predicted from the
 relationship between thermocline depth, Kd, surface area, and Julian day
 established in the surveys.  In the first section (Lake surveys) the authors
 note that Kd was significantly related to lake surface area and Julian day.
@@ -161,7 +174,7 @@ day are then used as independent variables in a regression? Indeed, there is
 no mention here that any of the assumptions of linear regression were
 assessed.  
 
-[ ]2.      In addition, surely there are only two actual dates available (n = 2 for
+[X]2.      In addition, surely there are only two actual dates available (n = 2 for
 Julian day): 7th August and 12 July? The author’s state that Julian day
 was significant in the model – do they have enough data to support this
 statement? If this is not the case the authors need to clarify.
