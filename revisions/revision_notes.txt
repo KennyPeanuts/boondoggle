@@ -45,7 +45,12 @@
 ## 21 June 2013
 1. softened the language about the predicted effects of warming and warming + Kd change in the results. (ln 303)
 2. Clarified that the patch-scale differences were due to the variation in temperature and oxygen (ln 347)
-
+3. Added more explanation to the results of the case study to make the estimated parameters clearer
+  + removed definitive statement about the effect of Kd on SOD (ln 290)
+  + added more description to soften the predictions of the model under warming + inc. Kd (ln 306)
+4. Added introduction to the Case Study discussion framing its purpose 
+5. Added a caveat to the discussion of the case study and softened the conclusions (ln 420)
+6. Moved the discussion of the climate change effects on transparency to the introduction.
 
 ##########################################################################################
 
@@ -191,7 +196,7 @@ effect of patch–scale variation in environmental conditions on SOD based
 on their incubation results, yet use these results to then calculate SOD
 rates for the whole lake sediment area both now and in the future.
 
-[ ]5.      They ‘model’ SOD rates below the thermocline (i.e. under anoxic
+[X]5.      They ‘model’ SOD rates below the thermocline (i.e. under anoxic
 conditions) based on the relationship between SOD and DO levels in the water
 column during their incubations, although there was no attempt to control
 oxygen availability during those incubations. They then go on to use these
@@ -285,3 +290,7 @@ Registered Charity No. 214440   Company Limited by Guarantee No. 263162, England
 ##########################################################################################
 
 Recently Gudasz et al. (2010) estimated that predicted climate warming will result in a 6–15% decrease in organic matter burial in boreal lakes due to the increase in surface water temperature and its direct effect on sediment organic matter mineralization. Supporting this conclusion, Flanagan and McCauley (2010) produced a 2-fold increase in pCO2 by experimentally warming mesocosms within a shallow lake. However, these findings do not take into account the effects of the full suite of potential changes to lake environmental conditions due to climate change, specifically alterations to the distribution of temperature and oxygen in stratified lakes.
+
+Clair TA, Ehrman JM, Higuchi H. 1999. Changes in freshwater carbon exports from Canadian terrestrial basins to lakes and estuaries under a 2x CO2 atmospheric scenario. Global Biogeochemical Cycles, 13:1091-1097, 1999. 
+
+Prowse TD, Furgal C, Wrona FJ, Reist JD. 2009. Implications of Climate Change for Northern Canada: Freshwater, Marine, and Terrestrial Ecosystems. Ambio, 38:282-289.

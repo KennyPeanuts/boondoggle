@@ -41,11 +41,18 @@ F-statistic: 35.05 on 2 and 42 DF,  p-value: 1.115e-09
 
 ## Using this model to predict TD in GTH 91 based on measurements of Kd and Julian day
 
-# Use data.frame = GTH91.case.ms
-load("./data/GTH91.case.ms")
-
 Use working dir =
   "/Volumes/NO NAME/working_files/current_research/boondoggle/inland_waters_submission/revisions/revision_analysis"
+
+
+~~~~
+
+# Load Workspace GTH91.case.ms
+load("./data/GTH91.case.ms")
+
+~~~~
+
+Use data.frame = GTH91.case.ms
 
 The model:
 
@@ -297,6 +304,34 @@ abline(lm(Kd.est.TD ~ GTH91.case.ms$Julian), lty = 2, col = 2)
 abline(lm(pred.TD ~ Julian, data = GTH91.case.ms), lty = 4, col = 4)
 abline(lm(all.est.TD.noOut ~ GTH91.case.ms$Julian), lty = 3, col = 3)
 legend(190, 2.8, c("Actual", "Kd Only", "Kd + Julian", "Kd + Julian + Area", "Kd + Julian + Area (no outliers)"), pch = c(16, 1, 1, 1, 1), col = c(1, 2, 1, 4, 3))
+
+~~~~
+
+## Assessment of predicted vs observed fit
+
+~~~~
+
+plot(TD ~ pred.TD, data = GTH91.case.ms)
+
+summary(lm(TD ~ pred.TD, data = GTH91.case.ms))
+
+Call:
+lm(formula = TD ~ pred.TD, data = GTH91.case.ms)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.96830 -0.29892  0.04415  0.19612  1.09057 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   0.8625     0.6074    1.42 0.189351    
+pred.TD       0.8925     0.1638    5.45 0.000406 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 0.6429 on 9 degrees of freedom
+Multiple R-squared: 0.7675,	Adjusted R-squared: 0.7416 
+F-statistic: 29.71 on 1 and 9 DF,  p-value: 0.0004055 
 
 ~~~~
 
