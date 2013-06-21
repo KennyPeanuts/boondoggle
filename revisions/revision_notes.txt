@@ -41,15 +41,11 @@
 4. Modified the Lake Survey results to better reflect the collinearity between Kd, Area, and Julian day.  Removed the correlation data and added the results of the linear regression between Kd and Area with and w/o GTH 68.  Removed the correlation data for the Kd and Julian relationship and folded this into the same analysis where the difference between years is discussed. (ln 235)
 5. Altered the methods (Stats) to reflect the use of regression for Kd vs Area and the removal of the test of Julian day (ln 163)
 6. Removed the "accurate" description from the Case Study Discussion and just say that the model reproduced the slope of the changes. (ln 392)
-7.
 
-##########################################################################################
+## 21 June 2013
+1. softened the language about the predicted effects of warming and warming + Kd change in the results. (ln 303)
+2. Clarified that the patch-scale differences were due to the variation in temperature and oxygen (ln 347)
 
-# Text Dump
-
-##########################################################################################
-
-Recently Gudasz et al. (2010) estimated that predicted climate warming will result in a 6–15% decrease in organic matter burial in boreal lakes due to the increase in surface water temperature and its direct effect on sediment organic matter mineralization. Supporting this conclusion, Flanagan and McCauley (2010) produced a 2-fold increase in pCO2 by experimentally warming mesocosms within a shallow lake. However, these findings do not take into account the effects of the full suite of potential changes to lake environmental conditions due to climate change, specifically alterations to the distribution of temperature and oxygen in stratified lakes.
 
 ##########################################################################################
 
@@ -57,11 +53,14 @@ Recently Gudasz et al. (2010) estimated that predicted climate warming will resu
 
 ##########################################################################################
 
-Reviewer D questioned the fact that oxygen concentration was not explicitly controlled during the measurement of anoxic mineralization.  The lakes in this region of the arctic and those included in the study do not regularly go anoxic and thus we were not assessing the effect of anoxic conditions on mineralization but rather evaluating the relationship between oxygen concentration of the overlying water and SOD.  We tested the effect of oxygen availability on SOD by manipulating the availability of oxygen by extending the incubation time.  To clarify this point we added additional text to the methods section on the sediment incubations. (10 Jun rev 7)
+Reviewer D questioned the fact that oxygen concentration was not explicitly controlled during the measurement of anoxic mineralization.  The lakes in this region of the arctic and those included in the study do not regularly go anoxic and thus we were not assessing the effect of anoxic conditions on mineralization but rather evaluating the relationship between oxygen concentration of the overlying water and SOD.  We tested the effect of oxygen availability on SOD by manipulating the availability of oxygen by extending the incubation time.  To clarify this point we added additional text to the methods section on the sediment incubations. (10 Jun rev 7) This also addresses the reviewer's concern that the results of our incubations are not representative of the conditions found in the hypolimnion of GTH 91 in the case study.  The hypolimnion of GTH 91 was not anoxic during any of the times that we sampled the lake and thus the SOD measured under reduced oxygen availability in the incubation experiment should be informative for the conditions in the hypolimnion of GTH 91.
 
 Reviewer D notes that the factors included in the linear model of thermocline depth by Kd, Area, and Julian Day were somewhat collinear, which can bias the independent estimation of the slope for each term.  We acknowledge that there is some collinearity between the predictors but it is fairly modest.  The R^2 of the relationship between Kd and Area is only 0.1 and the R^2 of the relationship between Kd and Julian Day is only 0.2.  While any collinearity between the predictors makes it impossible to completely independently estimate the this modest collinearity should still make it possible to get a reasonable estimate of the relationship between the predictors and the thermocline depth.  Furthermore, previous studies have shown that each of the predictors included in the model are important drivers of thermocline depth.  Lake area can affect thermocline depth through variation in wind mixing intensity related to fetch. Time since stratification (i.e., Julian Day) can affect thermocline depth via the continued deepening of the thermocline over time. Given the modest collinearity between the predictors, the prior evidence that these factors should be important for estimating thermocline depth, and the accuracy with which the model estimates the thermocline depth of GTH 91, we feel justified in using this model.  In response to these concerns, we attempted to model the thermocline depth of Lake GTH 91 without using the collinear predictors (i.e., just single predictors), and none of the models did as good of a job representing the changes in thermocline depth in GTH 91 as the model with all of the predictors.  To clarify the limitations of our model and our justification for using the this model we have changed the treatment of the relationship between Kd and Area, highlighting the magnitude of the relationship in the results and the effect of Lake GTH 68 which was the largest lake and somewhat skewed the results.  
 
 Reviewer D expresses concern that Julian Day is significant in the model despite the fact that there are only 2 julian days in the original survey.  Due to the well established relationship between thermocline depth and time since stratification, we feel justified considering the time in the summer as a factor affecting thermocline depth.  However with only 2 points it is possible that we are finding a linear relationship when there is another shape to the change in thermocline depth with time.  We do not have additional dates from the survey lakes but the actual change in thermocline depth with julian day in GTH 91 (Fig. 8 solid line, open circles) shows a very linear change in thermocline depth with julian day.  Given this, it seems reasonable to assume that relationship between thermocline depth and julian day in the survey lakes is also linear.
+
+Reviewer D is concerned that we describe the predicted thermocline depths by the model as accurate but do not include a measure of fit.  We have removed the description of "accurate" from the discussion and state more explicitly that the model reproduces the slope of the observed changes in thermocline depth over time and that it also reproduces the observed scatter. (ln 392)  Given the very high amount of similarity between the slope of the predicted response and the observed data, a more formal description of fit seems superfluous 
+
 
 ##########################################################################################
 
@@ -179,7 +178,7 @@ Julian day): 7th August and 12 July? The author’s state that Julian day
 was significant in the model – do they have enough data to support this
 statement? If this is not the case the authors need to clarify.
 
-[ ]3.      Thermocline depth is then used to assign lake area to either above or
+[X]3.      Thermocline depth is then used to assign lake area to either above or
 below the thermocline.  The authors say that this relationship is
 ’accurate’ but give no measure of fit, but also note that the
 relationship was ‘skewed’ by 12.4%.  However, I do note that regressions
@@ -278,3 +277,11 @@ Tel. +44 (0)1539 442468   Fax. +44 (0)1539 446914   Email. info@fba.org.uk
 Website. www.fba.org.uk   Director: Dr Michael Dobson
 Registered Charity No. 214440   Company Limited by Guarantee No. 263162, England  UKPRN No. 10018314, VAT No. GB 153895238
 
+
+##########################################################################################
+
+# Text Dump
+
+##########################################################################################
+
+Recently Gudasz et al. (2010) estimated that predicted climate warming will result in a 6–15% decrease in organic matter burial in boreal lakes due to the increase in surface water temperature and its direct effect on sediment organic matter mineralization. Supporting this conclusion, Flanagan and McCauley (2010) produced a 2-fold increase in pCO2 by experimentally warming mesocosms within a shallow lake. However, these findings do not take into account the effects of the full suite of potential changes to lake environmental conditions due to climate change, specifically alterations to the distribution of temperature and oxygen in stratified lakes.

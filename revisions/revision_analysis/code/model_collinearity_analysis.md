@@ -274,3 +274,4 @@ summary(lm(Kd ~ Julian, data = boon.tot, subset = Year != 2007))
 There is some collinearity between Kd and Area but it is rather small.  The correlation coeff = -0.34 for all years together and a liner regression between Kd and Area gives an R^2 of only 0.1.  Further some of the relationship seems to be driven by 2 very large lakes, removing these weakens the relationship between Kd and Area.
 
 There is also some collinearity between Kd and Julian day which is greater than for Area but still rather modest.  The correlation coeff for all years is -0.47 for all years together and a linear regression between Kd and Julian gives an R^2 of 0.2
+

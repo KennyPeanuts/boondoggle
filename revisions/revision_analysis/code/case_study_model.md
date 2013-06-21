@@ -41,7 +41,8 @@ F-statistic: 35.05 on 2 and 42 DF,  p-value: 1.115e-09
 
 ## Using this model to predict TD in GTH 91 based on measurements of Kd and Julian day
 
-Use data.frame = GTH91.case.ms
+# Use data.frame = GTH91.case.ms
+load("./data/GTH91.case.ms")
 
 Use working dir =
   "/Volumes/NO NAME/working_files/current_research/boondoggle/inland_waters_submission/revisions/revision_analysis"
