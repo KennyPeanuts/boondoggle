@@ -48,10 +48,12 @@
 3. Added more explanation to the results of the case study to make the estimated parameters clearer
   + removed definitive statement about the effect of Kd on SOD (ln 290)
   + added more description to soften the predictions of the model under warming + inc. Kd (ln 306)
-4. Added introduction to the Case Study discussion framing its purpose 
-5. Added a caveat to the discussion of the case study and softened the conclusions (ln 420)
+4. Added introduction to the Case Study discussion framing its purpose (ln 409) 
+5. Added a caveat to the discussion of the case study and softened the conclusions (ln 432)
 6. Moved the discussion of the climate change effects on transparency to the introduction.
 
+## 1 July 2013
+1. Point out that we do not have in-situ measurements of gross SOD from lake GTH 91 during 2006 and 2008 so we needed the incubation exp to estimate the whole lake SOD (ln 212)
 ##########################################################################################
 
 # Description of changes for reviewers
@@ -66,6 +68,11 @@ Reviewer D expresses concern that Julian Day is significant in the model despite
 
 Reviewer D is concerned that we describe the predicted thermocline depths by the model as accurate but do not include a measure of fit.  We have removed the description of "accurate" from the discussion and state more explicitly that the model reproduces the slope of the observed changes in thermocline depth over time and that it also reproduces the observed scatter. (ln 392)  Given the very high amount of similarity between the slope of the predicted response and the observed data, a more formal description of fit seems superfluous 
 
+Reviewer D questions the use of a relationship between SOD and temperature and SOD and oxygen availability based on one sediment incubation experiment to estimate the SOD of the whole lake, given that we identify substantial patch-scale variation in SOD.  We of course, recognize the limitations associated with extrapolating from experimental results to whole systems but we feel that this is appropriate given that the vast majority of the variation in SOD that we observed in the incubation experiment was due to variation in temperature and oxygen.  We therefore presume that patch-scale variation in temperature and oxygen in the lake would result in variation in patch-scale variation in SOD.  The purpose of the model was to evaluate the sensitivity of the whole lake SOD to changes in the distribution of temperature and oxygen so we felt that it was reasonable to apply this simplified extrapolation from the incubation experiment. We add additional justification to the methods description of the case study SOD determination to indicate why it was necessary to estimate SOD from the incubation experiment (ln 212).   To clarify the intentions and the limitations of this approach we altered the description of patch-scale variation to make it clearer that we are attributing the variation to variation temperature and oxygen (ln 347).  Furthermore, we added additional introduction to the case study discussion to make its intended purpose cleared (ln 409).  
+
+Reviewer D is 
+
+Reviewer D feels that we do not adequately frame the conclusions of the case study with respect to the limitations of the methods used and that our conclusions are too definitive.  To rectify this, we acknowledge that our results from the case study are based on limited data in the discussion and again describe the limited scope in which the results should be interpreted (ln 432).  
 
 ##########################################################################################
 
@@ -190,7 +197,7 @@ relationship was ‘skewed’ by 12.4%.  However, I do note that regressions
 of the predicted and actual thermocline depths against Julian day do explain
 92% of the variation.
 
-[ ]4.      They based future temperature and Kd effects on relationships based on
+[X]4.      They based future temperature and Kd effects on relationships based on
 data from their one sediment core incubation experiment. They note the
 effect of patch–scale variation in environmental conditions on SOD based
 on their incubation results, yet use these results to then calculate SOD
@@ -209,15 +216,16 @@ they at least base these temperature estimates on climate change projections
 for the region?  Or used a range of temperatures to capture the uncertainly
 that is widely acknowledged for future climate projections?
 
-[ ]The authors proceed to make very definitive statements based on their
+[X]       The authors proceed to make very definitive statements based on their
 estimates of SOD such as ‘the net effect of warming and a decrease in lake
 transparency is a reduction in the mineralization of sediment organic matter
 in the lake and a greater burial efficiency of sediment organic matter.’
 I do not think that this statement is supported by the analyses presented.
 While there is merit in the overall point that the manuscript seeks to make
 on the possible direction of change in SOD, it needs major revision to the
-case study element before it is published. I would also suggest that the
-title be changed.
+case study element before it is published. 
+
+[X] I would also suggest that the title be changed.
 
 Specific points:
 
@@ -261,8 +269,7 @@ prediction of sediment oxygen demand (SOD) under changed climate.
 [ ]My main concern is that variability in Kd either could (in 2008) or could not be (in
 2007) attributed to DOC during the lake surveys. The reasons of this
 difference have not been clarified. ("Assuming that light attenuation is
-primarily the result of cDOM, these results suggest that there was a
-decoupling of the bulk DOC concentration from the chromophoric (i.e., light
+primarily the result of cDOM, these results suggest that there was a decoupling of the bulk DOC concentration from the chromophoric (i.e., light
 attenuating) component of the DOC in 2007 but not 2008."). 
 
 At the same time
