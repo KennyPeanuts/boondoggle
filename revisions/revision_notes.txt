@@ -53,7 +53,7 @@
 6. Moved the discussion of the climate change effects on transparency to the introduction.
 
 ## 1 July 2013
-1. Point out that we do not have in-situ measurements of gross SOD from lake GTH 91 during 2006 and 2008 so we needed the incubation exp to estimate the whole lake SOD (ln 212)
+1. Point out that we do not have in-situ measurements of gross SOD from lake GTH 91 during 2006 and 2008 so we needed the incubation exp to estimate the whole lake SOD (ln 212).
 ##########################################################################################
 
 # Description of changes for reviewers
@@ -70,7 +70,7 @@ Reviewer D is concerned that we describe the predicted thermocline depths by the
 
 Reviewer D questions the use of a relationship between SOD and temperature and SOD and oxygen availability based on one sediment incubation experiment to estimate the SOD of the whole lake, given that we identify substantial patch-scale variation in SOD.  We of course, recognize the limitations associated with extrapolating from experimental results to whole systems but we feel that this is appropriate given that the vast majority of the variation in SOD that we observed in the incubation experiment was due to variation in temperature and oxygen.  We therefore presume that patch-scale variation in temperature and oxygen in the lake would result in variation in patch-scale variation in SOD.  The purpose of the model was to evaluate the sensitivity of the whole lake SOD to changes in the distribution of temperature and oxygen so we felt that it was reasonable to apply this simplified extrapolation from the incubation experiment. We add additional justification to the methods description of the case study SOD determination to indicate why it was necessary to estimate SOD from the incubation experiment (ln 212).   To clarify the intentions and the limitations of this approach we altered the description of patch-scale variation to make it clearer that we are attributing the variation to variation temperature and oxygen (ln 347).  Furthermore, we added additional introduction to the case study discussion to make its intended purpose cleared (ln 409).  
 
-Reviewer D is 
+Reviewer D suggests that we incorporate a more detailed estimate of the climate changes that will be experienced by the Arctic into our case study of the changes in lake GTH 91.  Our estimate of 3 deg. warming is based on a paper by  Gudasz et al. 2010 in which they report the most likely warming scenarios from 
 
 Reviewer D feels that we do not adequately frame the conclusions of the case study with respect to the limitations of the methods used and that our conclusions are too definitive.  To rectify this, we acknowledge that our results from the case study are based on limited data in the discussion and again describe the limited scope in which the results should be interpreted (ln 432).  
 
