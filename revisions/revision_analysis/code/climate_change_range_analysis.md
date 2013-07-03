@@ -122,7 +122,7 @@ I cannot find the original DOC measurement that I used for the calculations in t
 
     [1] 5.496 # DOC conc. of GTH 91 in early Jul 2009 (mg/L)
 
-### Generate the range of DOC values for a 1.1 to 6.4 deg C temp. increase based on Keller et al 2008 formula
+### Generate the range of SOD increases and DOC values for a 1.1 to 6.4 deg C temp. increase based on Keller et al 2008 formula
 
 To make a vector of the DOC values that would result from a 1.1 to 6.4 deg C increase in temperature I am applying the relationship identified by Keller et al 2008, which is a 0.5 to 2.3 mg/L increase in DOC per 1 deg C increase in temp.
 
@@ -137,6 +137,15 @@ To generate a vector of DOC concentrations I add the current DOC in GTH 91 to th
     DOC.low <- GTH91.DOCmgL.Jul2009 + (temp.incr * keller.low)
     DOC.high <- GTH91.DOCmgL.Jul2009 + (temp.incr * keller.high)
 
+##### Output
+
+    > DOC.low
+    [1] 5.996 6.496 6.996 7.496 7.996 8.496 8.996
+
+    > DOC.high
+    [1] 7.796 10.096 12.396 14.696 16.996 19.296 21.596
+
+
 To calculate the change in epi SOD for the temperature alone, I use the slope of the temp effect from the temperature experiment to "adjust" the estimated current temp.
 
     temp.slope <- 0.61
@@ -144,6 +153,58 @@ To calculate the change in epi SOD for the temperature alone, I use the slope of
     current.epi.SOD <- 18.6
     temp.SOD.areal.incr <- current.epi.SOD + (temp.incr * temp.slope)
     temp.SOD.incr <- temp.SOD.areal.incr * current.epi.area
+
+##### Output
+
+    temp.SOD.areal.incr
+    [1] 19.21 19.82 20.43 21.04 21.65 22.26 22.87
+
+    temp.SOD.incr
+    [1]  94993.45  98009.90 101026.35 104042.80 107059.25 110075.70 113092.15
+
+### Generate Kd values for DOC values from the increase in temp
+
+To etimate the Kd value of the lake at different DOC concentrations I used the relationship between Kd and DOC in the 2008 survey
+
+    summary(lm(Kd ~ DOC, data = boon.tot, subset = Year == 2008))
+
+#### Output of the regression of Kd by DOC
+
+~~~~
+
+Call:
+lm(formula = Kd ~ DOC, data = boon.tot, subset = Year == 2008)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.22323 -0.06648  0.01152  0.06280  0.16841 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.21644    0.08880   2.437 0.027715 *  
+DOC          0.15032    0.03012   4.991 0.000161 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+
+Residual standard error: 0.1156 on 15 degrees of freedom
+Multiple R-squared: 0.6241,	Adjusted R-squared: 0.5991 
+F-statistic: 24.91 on 1 and 15 DF,  p-value: 0.0001613 
+
+~~~~
+
+#### Predict the Kd from the DOC estimates following high and low warming conditions
+
+    Kd.DOC.intercept <- 0.21644
+    Kd.DOC.slope <- 0.15032
+    Kd.high <- Kd.DOC.intercept + DOC.high * Kd.DOC.slope
+    Kd.low <- Kd.DOC.intercept + DOC.low * Kd.DOC.slope
+
+##### Output of predicted Kd values for DOC increase from 1 - 7 deg warming in lake GTH 91
+
+    > Kd.high
+    [1] 1.388335 1.734071 2.079807 2.425543 2.771279 3.117015 3.462751
+    > Kd.low
+    [1] 1.117759 1.192919 1.268079 1.343239 1.418399 1.493559 1.568719
 
 ##### Variables
 
@@ -166,3 +227,11 @@ To calculate the change in epi SOD for the temperature alone, I use the slope of
 * temp.SOD.areal.incr is a vector of the predicted areal SOD (mmol O2/m2/d) for the epilimnion over the 1 - 7 deg C range of temp increases
 
 * temp.SOD,incr is a vector of the epi SOD (mmol O2/d) for the whole epilimnion
+
+* Kd.DOC.intercept is the intercept of the Kd by DOC linerar model for the 2008 survey
+
+* Kd.DOC.slope is the intercept of the Kd by DOC linear model for the 2008 survey
+
+* Kd.high is a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the high Keller et al 2008 estimate
+
+* Kd.low is a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the low Keller et al 2008 estimate
