@@ -94,3 +94,75 @@ The values in GTH91.case.ms$pred.Mix.Area are:
  [8] 0.4452056 0.5699696 0.5677131 0.7315006
 
 ~~~~
+
+## Calculate the change in Kd in lake GTH 91 based on the likely temperature increase of 1.1 - 6.4 deg C
+
+Keller et al. 2008 estimate a 0.5 to 2.3 mg/L increase in DOC per deg C warming.
+
+I cannot find the original DOC measurement that I used for the calculations in the manuscript but SCW reports a 458 umol/L DOC in GTH 91 in early July (SCW unpublished data)
+
+### Conversiton of SCW DOC value to mg/L
+
+    GTH91.DOCumolL.Jul2009 <- 458 # the DOC concentration of GTH 91 in early July 2009 in umol/L (SCW unpub. data)
+    ug.umol.C <- 12 # micrograms per umol of carbon
+
+    # confirm unit conversion
+    umol    ug      ug
+    ---- * ----  = ----
+     L     umol     L
+
+    # convert to ug/L
+    GTH91.DOCugL.Jul2009 <- GTH91.DOCumolL.Jul2009 * ug.umol.C # the DOC conc. in ug/L
+
+    # convert to mg/L
+    GTH91.DOCmgL.Jul2009 <- GTH91.DOCugL.Jul2009 / 1000
+    GTH91.DOCmgL.Jul2009
+
+#### Output
+
+    [1] 5.496 # DOC conc. of GTH 91 in early Jul 2009 (mg/L)
+
+### Generate the range of DOC values for a 1.1 to 6.4 deg C temp. increase based on Keller et al 2008 formula
+
+To make a vector of the DOC values that would result from a 1.1 to 6.4 deg C increase in temperature I am applying the relationship identified by Keller et al 2008, which is a 0.5 to 2.3 mg/L increase in DOC per 1 deg C increase in temp.
+
+#### Calculations
+
+    temp.incr <- 1:7
+    keller.low <- 0.5
+    keller.high <- 2.3
+
+To generate a vector of DOC concentrations I add the current DOC in GTH 91 to the temperature increase multiplied by the Keller high and low factor increase
+
+    DOC.low <- GTH91.DOCmgL.Jul2009 + (temp.incr * keller.low)
+    DOC.high <- GTH91.DOCmgL.Jul2009 + (temp.incr * keller.high)
+
+To calculate the change in epi SOD for the temperature alone, I use the slope of the temp effect from the temperature experiment to "adjust" the estimated current temp.
+
+    temp.slope <- 0.61
+    current.epi.area <- 4945
+    current.epi.SOD <- 18.6
+    temp.SOD.areal.incr <- current.epi.SOD + (temp.incr * temp.slope)
+    temp.SOD.incr <- temp.SOD.areal.incr * current.epi.area
+
+##### Variables
+
+* temp.incr is a vetor of temperature increases in 1 deg C incremnets that approxomates the range of 'likely' temperature increases from Gudsaz et al 2010 which report a range of increases from 1.1 to 6.4
+
+* keller.low is the low estimate of the DOC increase (mg/L) per 1 deg C increase in temp from Keller et al 2008
+ 
+* keller.high is the high estimate of the DOC increase (mg/L) per 1 deg C increase in temp from Keller et al 2008
+
+* DOC.low is the vector of GTH 91 DOC concentration (mg/L) following a 1 to 7 deg C temp increase based on the Keller et al 2008 low estimate
+
+* DOC.low is the vector of GTH 91 DOC concentration (mg/L) following a 1 to 7 deg C temp increase based on the Keller et al 2008 high estimate
+
+* temp.slope is the change in areal SOD (mmol O2/m2/d) per change in deg C
+
+* current.epi.area is the median sediment area above the thermocline (m2) taken from the manuscript
+
+* current.epi.SOD is the median of the SOD from the 12 deg temp exp treatment (mmol O2/m2/d)
+
+* temp.SOD.areal.incr is a vector of the predicted areal SOD (mmol O2/m2/d) for the epilimnion over the 1 - 7 deg C range of temp increases
+
+* temp.SOD,incr is a vector of the epi SOD (mmol O2/d) for the whole epilimnion
