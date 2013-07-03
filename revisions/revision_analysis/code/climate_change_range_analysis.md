@@ -206,6 +206,54 @@ F-statistic: 24.91 on 1 and 15 DF,  p-value: 0.0001613
     > Kd.low
     [1] 1.117759 1.192919 1.268079 1.343239 1.418399 1.493559 1.568719
 
+### Generate the sediment area above the thermocline using the estimated Kd values
+
+Using the mixed area formula from above:
+
+~~~~
+
+# the sediment area above the thermocline using the median of the observed Kd  
+obs.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * median(GTH91.case.ms$Kd) + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+
+# using the low est for 1 - 7 d warming
+low1.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.low[1] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+low2.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.low[2] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+low3.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.low[3] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+low4.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.low[4] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+low5.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.low[5] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+low6.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.low[6] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+low7.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.low[7] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+
+# using the high estimate for 1 - 7 degr warming
+high1.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[1] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+high2.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[2] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+high3.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[3] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+high4.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[4] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+high5.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[5] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+high6.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[6] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+high7.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[7] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+
+# plot of the changes in area
+
+plot(obs.mix.A ~ GTH91.case.ms$Julian, ylim = c(-1, 1), col = 3)
+points(low1.mix.A ~ GTH91.case.ms$Julian, col = 2)
+points(low2.mix.A ~ GTH91.case.ms$Julian)
+points(low3.mix.A ~ GTH91.case.ms$Julian)
+points(low4.mix.A ~ GTH91.case.ms$Julian)
+points(low5.mix.A ~ GTH91.case.ms$Julian)
+points(low6.mix.A ~ GTH91.case.ms$Julian)
+points(low7.mix.A ~ GTH91.case.ms$Julian)
+points(high1.mix.A ~ GTH91.case.ms$Julian, pch = 16)
+points(high2.mix.A ~ GTH91.case.ms$Julian, pch = 16)
+points(high3.mix.A ~ GTH91.case.ms$Julian, pch = 16)
+points(high4.mix.A ~ GTH91.case.ms$Julian, pch = 16)
+points(high5.mix.A ~ GTH91.case.ms$Julian, pch = 16)
+points(high6.mix.A ~ GTH91.case.ms$Julian, pch = 16)
+points(high7.mix.A ~ GTH91.case.ms$Julian, pch = 16, col = 2)
+abline(h = 0) 
+
+~~~~
+
 ##### Variables
 
 * temp.incr is a vetor of temperature increases in 1 deg C incremnets that approxomates the range of 'likely' temperature increases from Gudsaz et al 2010 which report a range of increases from 1.1 to 6.4
@@ -235,3 +283,4 @@ F-statistic: 24.91 on 1 and 15 DF,  p-value: 0.0001613
 * Kd.high is a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the high Keller et al 2008 estimate
 
 * Kd.low is a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the low Keller et al 2008 estimate
+
