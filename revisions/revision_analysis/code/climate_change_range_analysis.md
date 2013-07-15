@@ -261,9 +261,46 @@ legend(170, 1, c("Median Observed Kd", "0.5 mg/L DOC inc. per deg. C", "2.3 mg/L
 
 The `temp.SOD.areal.incr` vector represents the change in epilimnetic SOD across a 1 - 7 d C temperature increase.
 
-The first item in this vector `temp.SOD.areal.incr[1]` represents the areal SOD for 1 d C increase, which equals 91.21 mmol O2/m2/d and `temp.SOD.areal.incr[7]` represents the areal SOD for a 7 d C increase in temp, which equals 22.87 mmol O2/m2/d.
+The first item in this vector `temp.SOD.areal.incr[1]` represents the areal SOD for 1 d C increase, which equals 91.21 mmol O2/m2/d and `temp.SOD.areal.incr[6]` represents the areal SOD for a 6 d C increase in temp, which equals 22.87 mmol O2/m2/d.
 
-Multiplying these extremes by 
+Multiplying these extremes by `obs.mix.A * 10000`, which is the mixed area (converted from ha to m^2) under the current conditions, estimated from the median Kd provides a vector of the range of epilimnetic SOD across the season.
+  
+    epi.SOD.temp0 <- current.epi.SOD * (obs.mix.A * 10000) # using the est current areal SOD
+    epi.SOD.temp1 <- temp.SOD.areal.incr[1] * (obs.mix.A * 10000) # using 1 d C temp increase
+    epi.SOD.temp6 <- temp.SOD.areal.incr[6] * (obs.mix.A * 10000) # using 6 d C temp increase
+
+#### Output
+
+SOD estimates in mmol O2/d
+
+    epi.SOD.temp0
+    [1]  44439.13  62030.56  76677.06  99746.36 113902.77 126507.72  65641.82
+    [8]  82313.98  91898.07 105745.08 124374.50
+
+    epi.SOD.temp1
+    [1]  45896.54  64064.90  79191.73 103017.61 117638.29 130656.63  67794.59
+    [8]  85013.53  94911.93 109213.06 128453.45
+
+    epi.SOD.temp6
+    [1]  53183.61  74236.57  91765.12 119373.87 136315.89 151401.18  78558.44
+    [8]  98511.25 109981.24 126552.98 148848.19
+
+### Convert epiliminion SOD to whole-lake measurements
+
+In order to convert the epilimnion measurements to whole-lake measurements I subtract the estimated sediment area above the thermocline from the total sediment area (ha) `GTH91.case.ms$Area` = 2.5 ha.
+
+    obs.hypo.A <- GTH91.case.ms$Area - obs.mix.A
+
+To calculate the whole-lake SOD, I add the epilimnetic SOD estimate (`epi.SOD.temp(0, 1, 6)`) to the areal hypolimnetic SOD estimate from the manuscript (8.2 mmol O2/m2/d) by the hypolimnion sediment area (`obs.hypo.A`)
+
+This assumes that the temperature changes do not alter the conditions of the hypolimnion.
+
+    hypo.SOD.areal <- 8.2 # mmol O2/m2/d
+    hypo.SOD <- hypo.SOD.areal * (obs.hypo.A * 10000) # mmol O2/d
+
+    wholeLake.SOD.temp0 <- current.epi.SOD + hypo.SOD
+    wholeLake.SOD.temp1 <- epi.SOD.temp1 + hypo.SOD
+    wholeLake.SOD.temp6 <- epi.SOD.temp6 + hypo.SOD
 
 
 ## Variables
@@ -302,3 +339,6 @@ Multiplying these extremes by
 
 * high(N).mix.A is the area of sediment above the thermocline (ha) using the Kd value predicted from the high estimated relationship between DOC concentration and temperature from Keller et al. 2008 = 2.3 mg/L incr. per 1 d C incr in temp.  N is the temp increase
 
+epi.SOD.temp(0, 1, 6) is the SOD of the sediments above the thermocline in GTH 91 based on a 0, 1, or 6 d C increase in temp. (mmol O2/d)
+
+obs.hypo.A is the area of the sediments below the thermocline (ha) in lake GTH 91 during the modeled period 
