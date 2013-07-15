@@ -326,7 +326,7 @@ SOD estimates in mmol O2/d
     axis(1, c("0 dC", "1 dC", "6 dC"), at = c(1, 2, 3))
     dev.off()
 
-![Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature without a change in transparency/thermocline depth.](./output/whole_lake_SOD_temp.jpg)
+![Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature without a change in transparency/thermocline depth.](../output/whole_lake_SOD_temp.jpg)
     
 ## Calculate the change in whole lake SOD with warming and change in Kd
 
