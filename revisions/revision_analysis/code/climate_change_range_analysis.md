@@ -298,47 +298,103 @@ This assumes that the temperature changes do not alter the conditions of the hyp
     hypo.SOD.areal <- 8.2 # mmol O2/m2/d
     hypo.SOD <- hypo.SOD.areal * (obs.hypo.A * 10000) # mmol O2/d
 
-    wholeLake.SOD.temp0 <- current.epi.SOD + hypo.SOD
+    wholeLake.SOD.temp0 <- epi.SOD.temp0 + hypo.SOD
     wholeLake.SOD.temp1 <- epi.SOD.temp1 + hypo.SOD
     wholeLake.SOD.temp6 <- epi.SOD.temp6 + hypo.SOD
+
+#### Output
+
+SOD estimates in mmol O2/d
+
+    wholeLake.SOD.temp0
+    [1] 229847.7 239683.8 247873.2 260772.2 268687.6 275735.5 241703.0 251025.0
+    [9] 256383.9 264126.3 274542.7
+
+    wholeLake.SOD.temp1
+    [1] 231305.1 241718.1 250387.9 264043.4 272423.1 279884.4 243855.7 253724.6
+    [9] 259397.7 267594.3 278621.7
+
+    wholeLake.SOD.temp6
+    [1] 238592.2 251889.8 262961.3 280399.7 291100.7 300629.0 254619.6 267222.3
+    [9] 274467.0 284934.2 299016.4
+
+##### Figure; Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature without a change in transparency/thermocline depth.
+
+    jpeg("./output/whole_lake_SOD_temp.jpg")
+    boxplot(wholeLake.SOD.temp0, wholeLake.SOD.temp1, wholeLake.SOD.temp6, axes = F, ylab ="SOD (mmol O2/d", xlab = "Change in Temperature")
+    axis(2)
+    axis(1, c("0 dC", "1 dC", "6 dC"), at = c(1, 2, 3))
+    dev.off()
+
+![Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature without a change in transparency/thermocline depth.](./output/whole_lake_SOD_temp.jpg)
+    
+## Calculate the change in whole lake SOD with warming and change in Kd
+
+This analysis uses the Kd values calculated from the low estimate of Keller et al. 2008 of 0.5 mg/L DOC increase with a 1 d C increase in temperature.
+
+To calculate the change in whole lake SOD with warming and a change in transparency/ thermocline depth I use the estimated sediment areas calculated at the different temperatures.
+
+For the 1 degree increase in temperature the mixed sediment areas (ha) are in `low1.mix.A`, thus the SOD above the thermocline for the 1 degree temp increase, including the change in thermocline depth would be:
+
+    epi.SOD.tempWarm1 <- temp.SOD.areal.incr[1] * (low1.mix.A * 10000)
+
+and the SOD above the thermocline for the 6 degree temp. increase, including the change in thermocline depth would be:
+
+    epi.SOD.tempWarm6 <- temp.SOD.areal.incr[6] * (low6.mix.A * 10000)
+
+#### Output
+
+    epi.SOD.tempWarm1
+    [1]  23817.99  41072.03  55379.45  77793.14  91464.06 103576.70  44604.83
+    [8]  60870.55  70185.76  83594.41 101531.02
+
+    epi.SOD.tempWarm6
+    [1] -5266.308 13515.651 29022.513 53177.795 67819.454 80727.946 17350.552
+    [8] 34956.440 44999.272 59399.982 78552.320
 
 
 ## Variables
 
-* temp.incr is a vetor of temperature increases in 1 deg C incremnets that approxomates the range of 'likely' temperature increases from Gudsaz et al 2010 which report a range of increases from 1.1 to 6.4
+* temp.incr = a vetor of temperature increases in 1 deg C incremnets that approxomates the range of 'likely' temperature increases from Gudsaz et al 2010 which report a range of increases from 1.1 to 6.4
 
-* keller.low is the low estimate of the DOC increase (mg/L) per 1 deg C increase in temp from Keller et al 2008
+* keller.low = the low estimate of the DOC increase (mg/L) per 1 deg C increase in temp from Keller et al 2008
  
-* keller.high is the high estimate of the DOC increase (mg/L) per 1 deg C increase in temp from Keller et al 2008
+* keller.high = the high estimate of the DOC increase (mg/L) per 1 deg C increase in temp from Keller et al 2008
 
-* DOC.low is the vector of GTH 91 DOC concentration (mg/L) following a 1 to 7 deg C temp increase based on the Keller et al 2008 low estimate
+* DOC.low = the vector of GTH 91 DOC concentration (mg/L) following a 1 to 7 deg C temp increase based on the Keller et al 2008 low estimate
 
-* DOC.low is the vector of GTH 91 DOC concentration (mg/L) following a 1 to 7 deg C temp increase based on the Keller et al 2008 high estimate
+* DOC.low = the vector of GTH 91 DOC concentration (mg/L) following a 1 to 7 deg C temp increase based on the Keller et al 2008 high estimate
 
-* temp.slope is the change in areal SOD (mmol O2/m2/d) per change in deg C
+* temp.slope = the change in areal SOD (mmol O2/m2/d) per change in deg C
 
-* current.epi.area is the median sediment area above the thermocline (m2) taken from the manuscript
+* current.epi.area = the median sediment area above the thermocline (m2) taken from the manuscript
 
-* current.epi.SOD is the median of the SOD from the 12 deg temp exp treatment (mmol O2/m2/d)
+* current.epi.SOD = the median of the SOD from the 12 deg temp exp treatment (mmol O2/m2/d)
 
-* temp.SOD.areal.incr is a vector of the predicted areal SOD (mmol O2/m2/d) for the epilimnion over the 1 - 7 deg C range of temp increases
+* temp.SOD.areal.incr = a vector of the predicted areal SOD (mmol O2/m2/d) for the epilimnion over the 1 - 7 deg C range of temp increases
 
-* temp.SOD,incr is a vector of the epi SOD (mmol O2/d) for the whole epilimnion
+* temp.SOD,incr = a vector of the epi SOD (mmol O2/d) for the whole epilimnion
 
-* Kd.DOC.intercept is the intercept of the Kd by DOC linerar model for the 2008 survey
+* Kd.DOC.intercept = the intercept of the Kd by DOC linerar model for the 2008 survey
 
-* Kd.DOC.slope is the intercept of the Kd by DOC linear model for the 2008 survey
+* Kd.DOC.slope = the intercept of the Kd by DOC linear model for the 2008 survey
 
-* Kd.high is a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the high Keller et al 2008 estimate
+* Kd.high = a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the high Keller et al 2008 estimate
 
-* Kd.low is a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the low Keller et al 2008 estimate
+* Kd.low = a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the low Keller et al 2008 estimate
 
-* obs.mix.A is the area of sediment above the thermocline (ha) estimated using the median Kd value observed in the GTH 91 surveys
+* obs.mix.A = the area of sediment above the thermocline (ha) estimated using the median Kd value observed in the GTH 91 surveys
 
-* low(N).mix.A is the area of sediment above the thermocline (ha) using the Kd value predicted from the low estimated relationship between DOC concentration and temperature from Keller et al. 2008 = 0.5 mg/L incr. per 1 d C incr in temp.  N is the temp increase
+* low(N).mix.A = the area of sediment above the thermocline (ha) using the Kd value predicted from the low estimated relationship between DOC concentration and temperature from Keller et al. 2008 = 0.5 mg/L incr. per 1 d C incr in temp.  N = the temp increase
 
-* high(N).mix.A is the area of sediment above the thermocline (ha) using the Kd value predicted from the high estimated relationship between DOC concentration and temperature from Keller et al. 2008 = 2.3 mg/L incr. per 1 d C incr in temp.  N is the temp increase
+* high(N).mix.A = the area of sediment above the thermocline (ha) using the Kd value predicted from the high estimated relationship between DOC concentration and temperature from Keller et al. 2008 = 2.3 mg/L incr. per 1 d C incr in temp.  N = the temp increase
 
-epi.SOD.temp(0, 1, 6) is the SOD of the sediments above the thermocline in GTH 91 based on a 0, 1, or 6 d C increase in temp. (mmol O2/d)
+* epi.SOD.temp(0, 1, 6) = the SOD of the sediments above the thermocline in GTH 91 based on a 0, 1, or 6 d C increase in temp. (mmol O2/d)
 
-obs.hypo.A is the area of the sediments below the thermocline (ha) in lake GTH 91 during the modeled period 
+* obs.hypo.A = the area of the sediments below the thermocline (ha) in lake GTH 91 during the modeled period 
+
+* hypo.SOD.areal = the areal SOD of the sediments below the thermocline in lake GTH 91 (mmol O2/m2/d) taken from the manuscript calculations
+
+* hypo.SOD = the SOD of the sediments below the thermocline of GTH 91 (mmol O2/d) based on the changes in the hypolimnetic sediment area during the modeled period.  This assumes no effect of epilimnetic warming on hypo SOD.
+
+* wholeLake.SOD.temp(0, 1, 6) = the sum of the SOD above and below the thermocline for lake GTH 91 during the modelled period (mmol O2/d). The range od numbers represents 0, 1 or 6 d C warming.
