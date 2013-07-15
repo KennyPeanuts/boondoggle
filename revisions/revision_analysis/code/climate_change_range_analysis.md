@@ -255,7 +255,7 @@ legend(170, 1, c("Median Observed Kd", "0.5 mg/L DOC inc. per deg. C", "2.3 mg/L
 
 ~~~~
 
-<img src="../output/prop_sed_above_td.pdf" />
+![Figure of the proportion of sediment area above the thermocline across 1-7 dC warming](../output/prop_sed_above_td.pdf)
 
 ##### Variables
 
