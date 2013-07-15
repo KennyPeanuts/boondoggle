@@ -255,9 +255,18 @@ legend(170, 1, c("Median Observed Kd", "0.5 mg/L DOC inc. per deg. C", "2.3 mg/L
 
 ~~~~
 
-![Figure of the proportion of sediment area above the thermocline across 1-7 dC warming](../output/prop_sed_above_td.pdf)
+![Figure of the area (ha) of sediment area above the thermocline across 1-7 dC warming](../output/prop_sed_above_td.pdf)
 
-##### Variables
+## Calculate the change in whole-lake SOD with just the change in temperature
+
+The `temp.SOD.areal.incr` vector represents the change in epilimnetic SOD across a 1 - 7 d C temperature increase.
+
+The first item in this vector `temp.SOD.areal.incr[1]` represents the areal SOD for 1 d C increase, which equals 91.21 mmol O2/m2/d and `temp.SOD.areal.incr[7]` represents the areal SOD for a 7 d C increase in temp, which equals 22.87 mmol O2/m2/d.
+
+Multiplying these extremes by 
+
+
+## Variables
 
 * temp.incr is a vetor of temperature increases in 1 deg C incremnets that approxomates the range of 'likely' temperature increases from Gudsaz et al 2010 which report a range of increases from 1.1 to 6.4
 
@@ -286,4 +295,10 @@ legend(170, 1, c("Median Observed Kd", "0.5 mg/L DOC inc. per deg. C", "2.3 mg/L
 * Kd.high is a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the high Keller et al 2008 estimate
 
 * Kd.low is a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the low Keller et al 2008 estimate
+
+* obs.mix.A is the area of sediment above the thermocline (ha) estimated using the median Kd value observed in the GTH 91 surveys
+
+* low(N).mix.A is the area of sediment above the thermocline (ha) using the Kd value predicted from the low estimated relationship between DOC concentration and temperature from Keller et al. 2008 = 0.5 mg/L incr. per 1 d C incr in temp.  N is the temp increase
+
+* high(N).mix.A is the area of sediment above the thermocline (ha) using the Kd value predicted from the high estimated relationship between DOC concentration and temperature from Keller et al. 2008 = 2.3 mg/L incr. per 1 d C incr in temp.  N is the temp increase
 
