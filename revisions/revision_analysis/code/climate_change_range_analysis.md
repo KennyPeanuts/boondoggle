@@ -234,9 +234,9 @@ high6.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[
 high7.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.high[7] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
 
 # plot of the changes in area
-
-plot(obs.mix.A ~ GTH91.case.ms$Julian, ylim = c(-1, 1), col = 3)
-points(low1.mix.A ~ GTH91.case.ms$Julian, col = 2)
+par(las =1)
+plot(obs.mix.A ~ GTH91.case.ms$Julian, ylim = c(-1, 1), ylab = "Proportion Sed Area Above Thermocline", xlab = "Julian Day", col = 4)
+points(low1.mix.A ~ GTH91.case.ms$Julian)
 points(low2.mix.A ~ GTH91.case.ms$Julian)
 points(low3.mix.A ~ GTH91.case.ms$Julian)
 points(low4.mix.A ~ GTH91.case.ms$Julian)
@@ -249,10 +249,13 @@ points(high3.mix.A ~ GTH91.case.ms$Julian, pch = 16)
 points(high4.mix.A ~ GTH91.case.ms$Julian, pch = 16)
 points(high5.mix.A ~ GTH91.case.ms$Julian, pch = 16)
 points(high6.mix.A ~ GTH91.case.ms$Julian, pch = 16)
-points(high7.mix.A ~ GTH91.case.ms$Julian, pch = 16, col = 2)
-abline(h = 0) 
+points(high7.mix.A ~ GTH91.case.ms$Julian, pch = 16)
+abline(h = 0)
+legend(170, 1, c("Median Observed Kd", "0.5 mg/L DOC inc. per deg. C", "2.3 mg/L DOC inc. per deg. C"), pch = c(1, 1, 16), col = c(4, 1, 1))
 
 ~~~~
+
+<img src="../output/prop_sed_above_td.pdf" />
 
 ##### Variables
 
