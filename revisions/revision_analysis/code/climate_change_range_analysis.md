@@ -336,22 +336,69 @@ To calculate the change in whole lake SOD with warming and a change in transpare
 
 For the 1 degree increase in temperature the mixed sediment areas (ha) are in `low1.mix.A`, thus the SOD above the thermocline for the 1 degree temp increase, including the change in thermocline depth would be:
 
-    epi.SOD.tempWarm1 <- temp.SOD.areal.incr[1] * (low1.mix.A * 10000)
+    epi.SOD.tempTrans1 <- temp.SOD.areal.incr[1] * (low1.mix.A * 10000)
 
 and the SOD above the thermocline for the 6 degree temp. increase, including the change in thermocline depth would be:
 
-    epi.SOD.tempWarm6 <- temp.SOD.areal.incr[6] * (low6.mix.A * 10000)
+    epi.SOD.tempTrans6 <- temp.SOD.areal.incr[6] * (low6.mix.A * 10000)
 
 #### Output
 
-    epi.SOD.tempWarm1
+    epi.SOD.tempTrans1
     [1]  23817.99  41072.03  55379.45  77793.14  91464.06 103576.70  44604.83
     [8]  60870.55  70185.76  83594.41 101531.02
 
-    epi.SOD.tempWarm6
+    epi.SOD.tempTrans6
     [1] -5266.308 13515.651 29022.513 53177.795 67819.454 80727.946 17350.552
     [8] 34956.440 44999.272 59399.982 78552.320
 
+### Calculate the change in whole-lake SOD with warming and change in transparency/thermocline depth
+
+Assuming that the warming of the epilimnion does not change the conditions of the hypolimnion I calculated the change in hypolimnion SOD as the areal hypolimnion SOD * sediment area below the thermocline
+
+The sediment area below the thermocline for 1 and 6 degr C change in temperature with warming and TD change is calculated as the difference between the total lake sediment area (m2) `GTH91.case.ms$Area * 10000` and the estimated epilimnetic sediment area `low1.mix.A` and `low6.mix.A`
+
+    hypo.SOD.tempTrans1 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - low1.mix.A)
+    hypo.SOD.tempTrans6 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - low6.mix.A)
+
+#### Output
+
+    hypo.SOD.tempTrans1
+    [1] 204999.0 204998.2 204997.6 204996.7 204996.1 204995.6 204998.1 204997.4
+    [9] 204997.0 204996.4 204995.7
+
+    hypo.SOD.tempTrans6
+    [1] 205000.2 204999.5 204998.9 204998.0 204997.5 204997.0 204999.4 204998.7
+    [9] 204998.3 204997.8 204997.1
+
+
+Calculate the whole-lake SOD as the sum of the epi and hypo SOD
+
+    wholeLake.SOD.tempTrans1 <- epi.SOD.tempTrans1 + hypo.SOD.tempTrans1
+    wholeLake.SOD.tempTrans6 <- epi.SOD.tempTrans6 + hypo.SOD.tempTrans6
+
+
+#### Output
+
+    wholeLake.SOD.tempTrans1
+    [1] 228817.0 246070.3 260377.1 282789.8 296460.2 308572.3 249602.9 265868.0
+    [9] 275182.8 288590.8 306526.7
+
+    wholeLake.SOD.tempTrans6
+    [1] 199733.9 218515.2 234021.4 258175.8 272817.0 285725.0 222349.9 239955.2
+    [9] 249997.6 264397.8 283549.4
+
+
+##### Figure; Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.
+
+    jpeg("./output/whole_lake_SOD_temp_trans.jpg")
+    boxplot(wholeLake.SOD.temp0, wholeLake.SOD.temp1, wholeLake.SOD.temp6, wholeLake.SOD.tempTrans1, wholeLake.SOD.tempTrans6, col = c(0, 5, 5, 4, 4), axes = F, ylab ="SOD (mmol O2/d", xlab = "Change in Temperature")
+    axis(2)
+    axis(1, c("0 dC", "1 dC", "6 dC", "1 dC", "6 dC"), at = c(1, 2, 3, 4, 5))
+    legend(1, 300000, c("Current", "Warming Only", "Warming + TD Change"), pch = 16, col = c(0, 5, 4))
+    dev.off()
+
+![Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.](../output/whole_lake_SOD_temp_trans.jpg)
 
 ## Variables
 
