@@ -396,16 +396,76 @@ Calculate the whole-lake SOD as the sum of the epi and hypo SOD
 ##### Figure; Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.
 
     jpeg("./output/whole_lake_SOD_temp_trans.jpg")
-    boxplot(wholeLake.SOD.temp0/1000, wholeLake.SOD.temp1/1000, wholeLake.SOD.tempTrans1/1000, wholeLake.SOD.temp6/1000,  wholeLake.SOD.tempTrans6/1000, col = c(8, 5, 4, 5, 4), axes = F, ylab ="SOD (mol O2/d)", xlab = "Change in Temperature")
+    par(las = 1, mar=c(4, 4.5, 4, 4))
+    boxplot(wholeLake.SOD.temp0/1000, wholeLake.SOD.temp1/1000, wholeLake.SOD.tempTrans1/1000, wholeLake.SOD.temp6/1000,  wholeLake.SOD.tempTrans6/1000, col = c(0, 0, 8, 0, 8), axes = F, ylab = expression(paste("SOD (mol d"^{-1},")")), xlab = "Climate Warming")
     axis(2)
-    axis(1, c("Current", "1 degr. C Increase", "6 degr. C Increase"), at = c(1, 2.5, 4.5))
-    legend(1, 300, c("Current", "Warming Only", "Warming + TD Change"), pch = 16, col = c(8, 5, 4))
+    axis(1, c("None", "1 degr. C", "6 degr. C"), at = c(1, 2.5, 4.5))
+    legend(0.5, 300, c("Warming Only", "Warming + Transparency Change"), pch = c(0, 15), col = c(1, 8))
+    box()
+    dev.off()
+
+    pdf("./output/whole_lake_SOD_temp_trans.pdf")
+    par(las = 1, mar=c(4, 4.5, 4, 4))
+    boxplot(wholeLake.SOD.temp0/1000, wholeLake.SOD.temp1/1000, wholeLake.SOD.tempTrans1/1000, wholeLake.SOD.temp6/1000,  wholeLake.SOD.tempTrans6/1000, col = c(0, 0, 8, 0, 8), axes = F, ylab = expression(paste("SOD (mol d"^{-1},")")), xlab = "Climate Warming")
+    axis(2)
+    axis(1, c("None", "1 degr. C", "6 degr. C"), at = c(1, 2.5, 4.5))
+    legend(0.5, 300, c("Warming Only", "Warming + Transparency Change"), pch = c(0, 15), col = c(1, 8))
+    box()
     dev.off()
 
 ![Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.](../output/whole_lake_SOD_temp_trans.jpg)
 
+### Summary of results
 
+#### Calculation of percent change in SOD
 
+With Warming increase only
+
+    perc.change.temp1 <- ((median(wholeLake.SOD.temp1) - median(wholeLake.SOD.temp0)) / median(wholeLake.SOD.temp0)) * 100
+    perc.change.temp6 <- ((median(wholeLake.SOD.temp6) - median(wholeLake.SOD.temp0)) / median(wholeLake.SOD.temp0)) * 100
+
+With Warming and trans change
+
+    perc.change.tempTrans1 <- ((median(wholeLake.SOD.tempTrans1) - median(wholeLake.SOD.temp0)) / median(wholeLake.SOD.temp0)) * 100
+    perc.change.tempTrans6 <- ((median(wholeLake.SOD.tempTrans6) - median(wholeLake.SOD.temp0)) / median(wholeLake.SOD.temp0)) * 100
+
+##### Output
+
+##### 1 degree increase warming only
+
+    median(wholeLake.SOD.temp0)
+    [1] 256383.9
+
+    median(wholeLake.SOD.temp1)
+    [1] 259397.7
+
+    perc.change.temp1
+    [1] 1.175527
+
+##### 6 degree increase warming only
+
+    median(wholeLake.SOD.temp6)
+    [1] 274467
+
+    perc.change.temp6
+    [1] 7.053162
+
+##### 1 degree increase warming and trans change
+
+    median(wholeLake.SOD.tempTrans1)
+    [1] 245226.2
+
+    perc.change.tempTrans1
+    [1] -4.351939
+
+##### 6 degree increase warming and trans change
+
+    median(wholeLake.SOD.tempTrans6)
+    [1] 233422.7
+
+    perc.change.tempTrans6
+    [1] -8.955769
+    
 ## Variables
 
 * temp.incr = a vetor of temperature increases in 1 deg C incremnets that approxomates the range of 'likely' temperature increases from Gudsaz et al 2010 which report a range of increases from 1.1 to 6.4
