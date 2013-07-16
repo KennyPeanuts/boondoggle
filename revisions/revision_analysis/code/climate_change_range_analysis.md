@@ -358,8 +358,8 @@ Assuming that the warming of the epilimnion does not change the conditions of th
 
 The sediment area below the thermocline for 1 and 6 degr C change in temperature with warming and TD change is calculated as the difference between the total lake sediment area (m2) `GTH91.case.ms$Area * 10000` and the estimated epilimnetic sediment area `low1.mix.A` and `low6.mix.A`
 
-    hypo.SOD.tempTrans1 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - low1.mix.A)
-    hypo.SOD.tempTrans6 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - low6.mix.A)
+    hypo.SOD.tempTrans1 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - low1.mix.A * 10000)
+    hypo.SOD.tempTrans6 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - low6.mix.A * 10000)
 
 #### Output
 
@@ -392,13 +392,15 @@ Calculate the whole-lake SOD as the sum of the epi and hypo SOD
 ##### Figure; Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.
 
     jpeg("./output/whole_lake_SOD_temp_trans.jpg")
-    boxplot(wholeLake.SOD.temp0, wholeLake.SOD.temp1, wholeLake.SOD.temp6, wholeLake.SOD.tempTrans1, wholeLake.SOD.tempTrans6, col = c(0, 5, 5, 4, 4), axes = F, ylab ="SOD (mmol O2/d", xlab = "Change in Temperature")
+    boxplot(wholeLake.SOD.temp0/1000, wholeLake.SOD.temp1/1000, wholeLake.SOD.tempTrans1/1000, wholeLake.SOD.temp6/1000,  wholeLake.SOD.tempTrans6/1000, col = c(8, 5, 4, 5, 4), axes = F, ylab ="SOD (mol O2/d)", xlab = "Change in Temperature")
     axis(2)
-    axis(1, c("0 dC", "1 dC", "6 dC", "1 dC", "6 dC"), at = c(1, 2, 3, 4, 5))
-    legend(1, 300000, c("Current", "Warming Only", "Warming + TD Change"), pch = 16, col = c(0, 5, 4))
+    axis(1, c("Current", "1 degr. C Increase", "6 degr. C Increase"), at = c(1, 2.5, 4.5))
+    legend(1, 300, c("Current", "Warming Only", "Warming + TD Change"), pch = 16, col = c(8, 5, 4))
     dev.off()
 
 ![Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.](../output/whole_lake_SOD_temp_trans.jpg)
+
+
 
 ## Variables
 
