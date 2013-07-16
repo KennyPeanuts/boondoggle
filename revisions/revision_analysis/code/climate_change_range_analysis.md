@@ -338,9 +338,11 @@ For the 1 degree increase in temperature the mixed sediment areas (ha) are in `l
 
     epi.SOD.tempTrans1 <- temp.SOD.areal.incr[1] * (low1.mix.A * 10000)
 
-and the SOD above the thermocline for the 6 degree temp. increase, including the change in thermocline depth would be:
+The earliest day (Julian day 170) value of the epilimnetic area is negative (see `low6.mix.A` above).  Obviously this cannot be true and the lowest the epi area can fall is 0, so the negative number is replaced with a 0 using `(c(0, low6.mix.A[-1])`
 
-    epi.SOD.tempTrans6 <- temp.SOD.areal.incr[6] * (low6.mix.A * 10000)
+The SOD above the thermocline for the 6 degree temp. increase, including the change in thermocline depth would be:
+
+    epi.SOD.tempTrans6 <- temp.SOD.areal.incr[6] * (c(0, low6.mix.A[-1]) * 10000) # changes neg area to 0
 
 #### Output
 
@@ -349,8 +351,8 @@ and the SOD above the thermocline for the 6 degree temp. increase, including the
     [8]  60870.55  70185.76  83594.41 101531.02
 
     epi.SOD.tempTrans6
-    [1] -5266.308 13515.651 29022.513 53177.795 67819.454 80727.946 17350.552
-    [8] 34956.440 44999.272 59399.982 78552.320
+    [1]     0.00 13515.65 29022.51 53177.79 67819.45 80727.95 17350.55 34956.44
+    [9] 44999.27 59399.98 78552.32
 
 ### Calculate the change in whole-lake SOD with warming and change in transparency/thermocline depth
 
@@ -358,8 +360,10 @@ Assuming that the warming of the epilimnion does not change the conditions of th
 
 The sediment area below the thermocline for 1 and 6 degr C change in temperature with warming and TD change is calculated as the difference between the total lake sediment area (m2) `GTH91.case.ms$Area * 10000` and the estimated epilimnetic sediment area `low1.mix.A` and `low6.mix.A`
 
+The negative epi area is changed to 0 as above.
+
     hypo.SOD.tempTrans1 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - low1.mix.A * 10000)
-    hypo.SOD.tempTrans6 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - low6.mix.A * 10000)
+    hypo.SOD.tempTrans6 <- hypo.SOD.areal * ((GTH91.case.ms$Area * 10000) - c(0, low6.mix.A[-1]) * 10000) # changed neg area to 0
 
 #### Output
 
@@ -368,8 +372,8 @@ The sediment area below the thermocline for 1 and 6 degr C change in temperature
     [9] 204997.0 204996.4 204995.7
 
     hypo.SOD.tempTrans6
-    [1] 205000.2 204999.5 204998.9 204998.0 204997.5 204997.0 204999.4 204998.7
-    [9] 204998.3 204997.8 204997.1
+    [1] 205000.0 200021.2 194308.9 185410.7 180017.1 175261.9 198608.5 192123.0
+    [9] 188423.4 183118.6 176063.4
 
 
 Calculate the whole-lake SOD as the sum of the epi and hypo SOD
@@ -385,10 +389,10 @@ Calculate the whole-lake SOD as the sum of the epi and hypo SOD
     [9] 275182.8 288590.8 306526.7
 
     wholeLake.SOD.tempTrans6
-    [1] 199733.9 218515.2 234021.4 258175.8 272817.0 285725.0 222349.9 239955.2
-    [9] 249997.6 264397.8 283549.4
+    [1] 205000.0 213536.8 223331.4 238588.5 247836.5 255989.9 215959.1 227079.4
+    [9] 233422.7 242518.6 254615.7
 
-
+    
 ##### Figure; Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.
 
     jpeg("./output/whole_lake_SOD_temp_trans.jpg")
@@ -447,3 +451,9 @@ Calculate the whole-lake SOD as the sum of the epi and hypo SOD
 * hypo.SOD = the SOD of the sediments below the thermocline of GTH 91 (mmol O2/d) based on the changes in the hypolimnetic sediment area during the modeled period.  This assumes no effect of epilimnetic warming on hypo SOD.
 
 * wholeLake.SOD.temp(0, 1, 6) = the sum of the SOD above and below the thermocline for lake GTH 91 during the modelled period (mmol O2/d). The range od numbers represents 0, 1 or 6 d C warming.
+
+* epi.SOD.tempTrans(1, 6) = the SOD of the epilimnion of GTH 91 (mmol O2/d) including a 1 or 6 degr. increase in temperature and the appropriate change in transparency.  The value is calculated as the areal SOD rate multiplied by the epilimnetic sediment area.
+
+* hypo.SOD.tempTrans(1, 6) = the SOD of the hypolimnion of GTH 91 (mmol O2/d) including a 1 or 6 degr. increase in temperature and the appropriate change in transparency.  The value is calculated as the areal SOD rate multiplied by the epilimnetic sediment area minus the total lake area.
+
+* wholeLake.SOD.tempTrans(1, 6) = the sum of the epi and hypolimnetic SOD (mmol O2/d) including a 1 or 6 degr. increase in temperature and the appropriate change in transparency.   
