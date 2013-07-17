@@ -11,9 +11,15 @@ In this analysis I am assessing the effect of removing the correlated predictors
 
 ## Predicting TD via Kd and Julian
 
-~~~~
+### Load Data
 
-summary(lm(TD ~ Kd + Julian, data = boon.tot))
+    load("./data/boon.tot")
+
+### Model of TD based on Kd and Julian Day
+
+    summary(lm(TD ~ Kd + Julian, data = boon.tot))
+
+#### Output
 
 ~~~~
 
@@ -37,7 +43,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 1.062 on 42 degrees of freedom
   (2 observations deleted due to missingness)
 Multiple R-squared: 0.6253,	Adjusted R-squared: 0.6075 
-F-statistic: 35.05 on 2 and 42 DF,  p-value: 1.115e-09 
+F-statistic: 35.05 on 2 and 42 DF,  p-value: 1.115e-09
+
+~~~~
 
 ## Using this model to predict TD in GTH 91 based on measurements of Kd and Julian day
 
