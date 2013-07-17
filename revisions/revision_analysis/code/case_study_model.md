@@ -49,43 +49,37 @@ F-statistic: 35.05 on 2 and 42 DF,  p-value: 1.115e-09
 
 ## Using this model to predict TD in GTH 91 based on measurements of Kd and Julian day
 
-Use working dir =
-  "/Volumes/NO NAME/working_files/current_research/boondoggle/inland_waters_submission/revisions/revision_analysis"
+    Use working dir =
+    "/Volumes/NO NAME/working_files/current_research/boondoggle/inland_waters_submission/revisions/revision_analysis"
 
+### Load Workspace GTH91.case.ms
 
-~~~~
-
-# Load Workspace GTH91.case.ms
-load("./data/GTH91.case.ms")
+    load("./data/GTH91.case.ms")
 
 ~~~~
 
-Use data.frame = GTH91.case.ms
+### Define the model:
 
-The model:
+Thermocline Depth = -2.18072 + Kd * -4.58008 + Julian Day * 0.04947
 
-  est.TD = -2.18072 + Kd * -4.58008 + Julian * 0.04947
 
-~~~~
-
-est.TD <- -2.18072 + GTH91.case.ms$Kd * -4.58008 + GTH91.case.ms$Julian * 0.04947
+    est.TD <- -2.18072 + GTH91.case.ms$Kd * -4.58008 + GTH91.case.ms$Julian * 0.04947
 est.TD
 
-~~~~
 
-### Estimated TD based on the model
+#### Output Estimated TD based on the model
 
-> est.TD
- [1] 1.461317 2.382422 3.147795 3.745557 3.732310 5.813988 3.196771 3.450095
- [9] 4.382167 4.010301 5.001018
+    > est.TD
+    [1] 1.461317 2.382422 3.147795 3.745557 3.732310 5.813988 3.196771 3.450095
+    [9] 4.382167 4.010301 5.001018
 
 
 ### Regression of the estimated TD based on Kd + Julian by the Julian Day
 
-~~~~
 
-# Regression of the estimated TD based on Kd + Julian by Julian Day
-summary(lm(est.TD ~ GTH91.case.ms$Julian))
+    summary(lm(est.TD ~ GTH91.case.ms$Julian))
+
+#### Output
 
 ~~~~
 
@@ -109,11 +103,13 @@ Residual standard error: 0.5024 on 9 degrees of freedom
 Multiple R-squared: 0.8387,	Adjusted R-squared: 0.8208 
 F-statistic:  46.8 on 1 and 9 DF,  p-value: 7.551e-05 
 
-### Regression of the actual TD by Julian Day in GTH91
-
 ~~~~
 
-summary(lm(GTH91.case.ms$TD ~ GTH91.case.ms$Julian))
+### Regression of the actual TD by Julian Day in GTH91
+
+    summary(lm(GTH91.case.ms$TD ~ GTH91.case.ms$Julian))
+
+# Output
 
 ~~~~
 
@@ -135,7 +131,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 Residual standard error: 0.3656 on 9 degrees of freedom
 Multiple R-squared: 0.9248,	Adjusted R-squared: 0.9165 
-F-statistic: 110.7 on 1 and 9 DF,  p-value: 2.34e-06 
+F-statistic: 110.7 on 1 and 9 DF,  p-value: 2.34e-06
+
+~~~~
 
 ### Plot of the estimated and actual TD by Julian Day
 
@@ -143,12 +141,18 @@ plot(est.TD ~ GTH91.case.ms$Julian)
 points(TD ~ Julian, data = GTH91.case.ms, pch = 16)
 abline(lm(GTH91.case.ms$TD ~ GTH91.case.ms$Julian), lty = 1)
 abline(lm(est.TD ~ GTH91.case.ms$Julian), lty = 2)
+dev.copy(png, "./output/Kd_Julian_TD_by_Julian.png")
+dev.off()
+
+![Actual TD and TD estimated from Kd and Julian only by Julian Day in GTH 91](../output/Kd_Julian_TD_by_Julian.png)
 
 ### Estimation of TD with just Kd
 
-~~~~
+Determine the relationship between Kd and TD
 
-summary(lm(TD ~ Kd, data = boon.tot))
+    summary(lm(TD ~ Kd, data = boon.tot))
+
+#### Output
 
 ~~~~
 
@@ -175,19 +179,25 @@ F-statistic: 47.94 on 1 and 43 DF,  p-value: 1.658e-08
 
 ~~~~
 
-Kd.est.TD <- 8.9186 + GTH91.case.ms$Kd * -6.0109
-Kd.est.TD
+### Estimate TD using Kd alone based on above model
+
+    Kd.est.TD <- 8.9186 + (GTH91.case.ms$Kd * -6.0109) 
+
+#### Output
 
 ~~~~
 
+ > Kd.est.TD
  [1] 2.661253 3.220868 3.705948 3.711357 3.239502 5.581949 4.159770 3.907914
  [9] 4.806543 3.864034 4.579932
 
-### Plot of the estimated TD using Kd only by Julian day in GTH 91
-
 ~~~~
 
-summary(lm(Kd.est.TD ~ GTH91.case.ms$Julian))
+### Evaluation and Plot of the estimated TD using Kd only by Julian day in GTH 91
+
+    summary(lm(Kd.est.TD ~ GTH91.case.ms$Julian))
+
+#### Output
 
 ~~~~
 
@@ -209,27 +219,31 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 Residual standard error: 0.6593 on 9 degrees of freedom
 Multiple R-squared: 0.4126,	Adjusted R-squared: 0.3474 
-F-statistic: 6.323 on 1 and 9 DF,  p-value: 0.03306 
-
-### Plot of the estimated TD (with and w/o Julian in model) and actual TD by Julian day in GTH 91
+F-statistic: 6.323 on 1 and 9 DF,  p-value: 0.03306
 
 ~~~~
 
-plot(est.TD ~ GTH91.case.ms$Julian)
-points(TD ~ Julian, data = GTH91.case.ms, pch = 16)
-points(Kd.est.TD ~ GTH91.case.ms$Julian, pch = 1, col = 2)
-abline(lm(GTH91.case.ms$TD ~ GTH91.case.ms$Julian), lty = 1)
-abline(lm(est.TD ~ GTH91.case.ms$Julian), lty = 2)
-abline(lm(Kd.est.TD ~ GTH91.case.ms$Julian), lty = 2, col = 2)
-abline(lm(pred.TD ~ Julian, data = GTH91.case.ms), lty = 4, col = 4)
+#### Plot of the estimated TD (with and w/o Julian in model) and actual TD by Julian day in GTH 91
 
-~~~~
+    plot(est.TD ~ GTH91.case.ms$Julian)
+    points(TD ~ Julian, data = GTH91.case.ms, pch = 16)
+    points(Kd.est.TD ~ GTH91.case.ms$Julian, pch = 1, col = 2)
+    abline(lm(GTH91.case.ms$TD ~ GTH91.case.ms$Julian), lty = 1)
+    abline(lm(est.TD ~ GTH91.case.ms$Julian), lty = 2)
+    abline(lm(Kd.est.TD ~ GTH91.case.ms$Julian), lty = 3, col = 2)
+    abline(lm(pred.TD ~ Julian, data = GTH91.case.ms), lty = 4, col = 4)
+    legend(170, 5.8, c("TD based on Kd and Julian", "Actual TD", "TD based on Kd", "TD based on Kd, Julian, Area"), lty = c(2, 1, 3, 4), col = c(1, 1, 2, 4))
+    dev.copy(png, "./output/TD_models_by_Julian.png")
+    dev.off()
+
+![Plot of the different TD models (Kd +- Julian +- Area) by Julian Day](../output/TD_models_by_Julian.png)
+
 
 ### Estimation of TD using Kd, Julian Day and Area excluding Area outliers
 
-~~~~
+    summary(lm(TD ~ Kd + Area + Julian, data = boon.tot, subset = Area != max(Area[Year == 2006]) & Area != max(Area[Year == 2008])))
 
-summary(lm(TD ~ Kd + Area + Julian, data = boon.tot, subset = Area != max(Area[Year == 2006]) & Area != max(Area[Year == 2008])))
+#### Output
 
 ~~~~
 
@@ -257,23 +271,23 @@ Residual standard error: 0.8032 on 39 degrees of freedom
 Multiple R-squared: 0.7314,	Adjusted R-squared: 0.7107 
 F-statistic: 35.39 on 3 and 39 DF,  p-value: 3.235e-11 
 
+~~~~
+
 ### Estimation of TD from model with all parameters excluding Area outliers
 
-~~~~
+    all.est.TD.noOut <- -5.32643 + GTH91.case.ms$Kd * -3.23420 + GTH91.case.ms$Area * 0.05274 + GTH91.case.ms$Julian * 0.05850
 
-all.est.TD.noOut <- -5.32643 + GTH91.case.ms$Kd * -3.23420 + GTH91.case.ms$Area * 0.05274 + GTH91.case.ms$Julian * 0.05850
-all.est.TD.noOut
+#### Output
 
-~~~~
-
-[1] 1.383618 2.269722 2.998722 3.703633 3.859248 5.470616 2.891904 3.282891
- [9] 4.058904 3.961281 4.872974
+    all.est.TD.noOut
+    [1] 1.383618 2.269722 2.998722 3.703633 3.859248 5.470616 2.891904 3.282891
+    [9] 4.058904 3.961281 4.872974
 
 ### Regression of TD estimated with all parameters minus Area outliers
 
-~~~~
+    summary(lm(all.est.TD.noOut ~ GTH91.case.ms$Julian))
 
-summary(lm(all.est.TD.noOut ~ GTH91.case.ms$Julian))
+#### Output
 
 ~~~~
 
@@ -297,6 +311,8 @@ Residual standard error: 0.3547 on 9 degrees of freedom
 Multiple R-squared: 0.9137,	Adjusted R-squared: 0.9041 
 F-statistic: 95.25 on 1 and 9 DF,  p-value: 4.38e-06 
 
+~~~~
+
 ### Plot of the estimated TD with all models and actual TD by Julian day in GTH 91
 
 ~~~~
@@ -312,8 +328,11 @@ abline(lm(Kd.est.TD ~ GTH91.case.ms$Julian), lty = 2, col = 2)
 abline(lm(pred.TD ~ Julian, data = GTH91.case.ms), lty = 4, col = 4)
 abline(lm(all.est.TD.noOut ~ GTH91.case.ms$Julian), lty = 3, col = 3)
 legend(190, 2.8, c("Actual", "Kd Only", "Kd + Julian", "Kd + Julian + Area", "Kd + Julian + Area (no outliers)"), pch = c(16, 1, 1, 1, 1), col = c(1, 2, 1, 4, 3))
-
+dev.copy(png, "./output/All_TD_models_by_Julian.png")
+dev.off()
 ~~~~
+
+![Plot of all the different TD models (Kd +- Julian +- Area +- Area w/out outliers) by Julian Day](../output/All_TD_models_by_Julian.png)
 
 ## Assessment of predicted vs observed fit
 

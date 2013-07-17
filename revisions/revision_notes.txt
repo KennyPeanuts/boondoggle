@@ -55,8 +55,12 @@
 ## 1 July 2013
 1. Point out that we do not have in-situ measurements of gross SOD from lake GTH 91 during 2006 and 2008 so we needed the incubation exp to estimate the whole lake SOD (ln 212).
 
-## 3 July 2013
-
+## 17 July 2013
+1. Changed methods to show and cite the range of temperature used in the case study.
+2. Changed the methods to indicate that we used the low Keller estimate
+3. Included the SCW DOC measurement in the case study methods.
+4. Changed the description of how the DOC and Kd were calculated for the case study to reflect the new analysis.
+5.
 ##########################################################################################
 
 # Description of changes for reviewers
