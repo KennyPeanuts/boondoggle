@@ -1,0 +1,192 @@
+
+Dear Dr. Fortino,
+
+We have now completed the review of your submission "The effect of climate
+change on sediment organic matter processing in lakes: The role of changing
+transparency." Our decision is to RESUBMIT FOR REVIEW.
+
+Comments on the paper, based on the editorial and peer review process, can
+be found at the end of this email. Please, consider the thorough and helpful
+comments of the reviewers.
+
+Please follow the relevant instructions below, referring also to ‘Author
+Guidance - Part (2) Submission’ at:
+https://www.fba.org.uk/journals/index.php/IW/about/submissions#authorGuidelines
+
+Please revise and upload your manuscript within 45 days. Your revised
+manuscript should be uploaded to your current submission by logging in as
+above and following the instructions in 'Author Guidelines - Part (2)
+Submission'.  The modified manuscript should NOT be uploaded as a new
+submission.
+
+If you have any questions, please contact me.
+
+Vera Istvanovics
+Phone +36 14631894
+Fax +36 14631879
+istvera@goliat.eik.bme.hu
+
+
+
+
+COMMENTS FROM THE EDITORIAL AND PEER REVIEW PROCESS:
+
+Resubmit for Review.
+------------------------------------------------------
+Reviewer C:
+. The paper is well written with a precise abstract and a nice
+introduction. I only miss a description of sediment/bottom characteristics -
+erosion, transport and accumulation bottoms have quite a different content
+of organic matter and are distributed with depth
+
+2. The methods include a lake survey, sediment incubations and a case study
+- good. My concern here is the same - there is no care taken about different
+sediment properties in the case study nor in the Sediment oxygen demand
+(SOD) experiments.
+
+3. The results are presented in a proper and concise way but I still miss
+differences in sediment properties above and below the thermocline. There is
+no information about content of organic matter, loss on ignition, water
+content etc from the sediments used in the experiments.
+
+4. Discussion suffers from the same lack of information and care about
+sediment characteristics
+
+------------------------------------------------------
+
+------------------------------------------------------
+Reviewer D:
+General
+This is a quite well-written paper with appropriate field methods, that
+describes three essentially separate pieces of work. I do, however, have
+issues with the focus of the paper.  The title and the abstract suggest that
+the main focus is the effect of climate change on sediment oxygen demand
+(SOD): this is a minor part of the actual experimental work carried out, and
+I would contend is as aspect of the paper that is weak, and is based on too
+many unsubstantiated assumptions (see below).
+
+The three sections of the paper include 1. measurement of a set of
+parameters including Kd, cDOM, DOC and Chl a on one occasion during each of
+three field seasons; 2. sediment core incubations to assess the role of
+temperature and oxygen availability on sediment organic matter
+mineralization (cores from three lakes); and 3. a single lake case study of
+the effect of changes in Kd, lake temperature profiles and bathymetry.  The
+results for the first of these studies are as would be expected: a strong
+relationship between both CDOM and DOC, and Kd, and between CDOM and DOC.
+The authors also report a significant relationship between Kd and
+thermocline depth.  They go on to discuss the reported relationships between
+Kd and thermocline depth, pointing out that similar relationships have been
+reported from other studies.  For the sediment incubation experiment, they
+report that SOD for their three lakes was positively related to temperature
+and was also related to sediment source. This is the first published data
+set on SOD from this region and therefore has merit in its own right.
+Interestingly they report a lower temperature sensitivity than other
+studies. They attribute this to selection for sediment microbial communities
+that perform more efficiently at lower temperatures and support this with
+literature.  However, I also note that the oxygen status of the water was
+not manipulated or controlled in any way, as is usual when assessing of the
+effect of anoxic conditions on mineralization.
+
+The authors then carry out a ‘case study’ for one lake to evaluate how
+changes in Kd might affect sediment organic matter mineralization under one
+temperature and Kd scenario.  These future projections are based on a large
+number of assumptions and on sparse data which I find are not all supported:
+
+1.      They state that thermocline depth in GTH 91 was predicted from the
+relationship between thermocline depth, Kd, surface area, and Julian day
+established in the surveys.  In the first section (Lake surveys) the authors
+note that Kd was significantly related to lake surface area and Julian day.
+Is there not an issue with collinearly if both Kd, surface area and Julian
+day are then used as independent variables in a regression? Indeed, there is
+no mention here that any of the assumptions of linear regression were
+assessed.
+2.      In addition, surely there are only two actual dates available (n = 2 for
+Julian day): 7th August and 12 July? The author’s state that Julian day
+was significant in the model – do they have enough data to support this
+statement? If this is not the case the authors need to clarify.
+3.      Thermocline depth is then used to assign lake area to either above or
+below the thermocline.  The authors say that this relationship is
+’accurate’ but give no measure of fit, but also note that the
+relationship was ‘skewed’ by 12.4%.  However, I do note that regressions
+of the predicted and actual thermocline depths against Julian day do explain
+92% of the variation.
+4.      They based future temperature and Kd effects on relationships based on
+data from their one sediment core incubation experiment. They note the
+effect of patch–scale variation in environmental conditions on SOD based
+on their incubation results, yet use these results to then calculate SOD
+rates for the whole lake sediment area both now and in the future.
+5.      They ‘model’ SOD rates below the thermocline (i.e. under anoxic
+conditions) based on the relationship between SOD and DO levels in the water
+column during their incubations, although there was no attempt to control
+oxygen availability during those incubations. They then go on to use these
+data to calculate below thermocline SOD rates for the whole lake!
+6.      Their future projections for climate change impacts are based on one Kd
+value (which in turn was based on one study from literature) and one
+possible future temperature increase based on one other study.  I suggest
+they at least base these temperature estimates on climate change projections
+for the region?  Or used a range of temperatures to capture the uncertainly
+that is widely acknowledged for future climate projections?
+
+The authors proceed to make very definitive statements based on their
+estimates of SOD such as ‘the net effect of warming and a decrease in lake
+transparency is a reduction in the mineralization of sediment organic matter
+in the lake and a greater burial efficiency of sediment organic matter.’
+I do not think that this statement is supported by the analyses presented.
+While there is merit in the overall point that the manuscript seeks to make
+on the possible direction of change in SOD, it needs major revision to the
+case study element before it is published. I would also suggest that the
+title be changed.
+
+Specific points:
+•       Methods, and figure and table legends need to clearly note the number
+of samples (n = ? for example for Figure 6).  The number of cores from each
+lake incubated at each temperature is not mentioned – this is essential
+information, since the future estimates are based on the variability of this
+unknown number of cores. Similarly, they state that ‘Temperature,
+irradiance and dissolved oxygen in lake GTH 91 were measured ‘as described
+above’ so was this on one date/sampling occasion in each year as part of
+the annual surveys? This is not clear.
+•       They note that DOC concentrations have been increasing in several
+regions, and are projected to increase further.  They then select a median
+value for DOC concentrations based on a study of small Boreal Shield lakes
+for their future scenario, and, using the relationship between DOC
+concentration and Kd identified in the 2008 survey, predict the effect of an
+increase in Kd on SOD. This justification belongs in methods, not in the
+disucssion.
+•       Similarly the future temperature increase of 3oC should be described
+and justified in the methods NOT in the discussion.
+•       Correlation coefficients or coefficients of determination not given for
+data displayed in Figure 3?
+•       Would spatial autocorrelation be an issue in the statistical analysis
+here? This is not mentioned but should be addressed.
+•       There is an issue with mixture of tenses in places: sometimes past
+tense is used to describe results, and then in the following sentence,
+present tense is used.
+
+-------------------------------------------------------
+
+------------------------------------------------------
+Editor:
+I share the opinion of Reviewer D that the weakest part of this work is the
+prediction of sediment oxygen demand (SOD) under changed climate. My main
+concern is that variability in Kd either could (in 2008) or could not be (in
+2007) attributed to DOC during the lake surveys. The reasons of this
+difference have not been clarified. ("Assuming that light attenuation is
+primarily the result of cDOM, these results suggest that there was a
+decoupling of the bulk DOC concentration from the chromophoric (i.e., light
+attenuating) component of the DOC in 2007 but not 2008."). At the same time
+the work calls the attention to a potential impact of climate change that
+has been neglected by others. In the present structure, the MS aims at
+verifying the starting hypothesis on the impact of climate change. I would
+suggest to start with hypothesizing a transparency vs. SOD relationship and
+propose in the Discussion that this relationship might strongly modify the
+impact of climate change.
+________________________________________________________________________
+Inland Waters
+https://www.fba.org.uk/journals/index.php/IW
+
+The Ferry Landing, Far Sawrey, Ambleside, Cumbria, LA22 0LP, United Kingdom
+Tel. +44 (0)1539 442468   Fax. +44 (0)1539 446914   Email. info@fba.org.uk
+Website. www.fba.org.uk   Director: Dr Michael Dobson
+Registered Charity No. 214440   Company Limited by Guarantee No. 263162, England  UKPRN No. 10018314, VAT No. GB 153895238
+
