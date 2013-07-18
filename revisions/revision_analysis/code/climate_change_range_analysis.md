@@ -196,15 +196,23 @@ F-statistic: 24.91 on 1 and 15 DF,  p-value: 0.0001613
 
     Kd.DOC.intercept <- 0.21644
     Kd.DOC.slope <- 0.15032
+    Kd.current <- Kd.DOC.intercept + GTH91.DOCmgL.Jul2009 * Kd.DOC.slope
     Kd.high <- Kd.DOC.intercept + DOC.high * Kd.DOC.slope
     Kd.low <- Kd.DOC.intercept + DOC.low * Kd.DOC.slope
 
 ##### Output of predicted Kd values for DOC increase from 1 - 7 deg warming in lake GTH 91
+    
+~~~~
+> Kd.current
+[1] 1.042599
 
-    > Kd.high
+> Kd.high
     [1] 1.388335 1.734071 2.079807 2.425543 2.771279 3.117015 3.462751
-    > Kd.low
+
+> Kd.low
     [1] 1.117759 1.192919 1.268079 1.343239 1.418399 1.493559 1.568719
+
+~~~~
 
 ### Generate the sediment area above the thermocline using the estimated Kd values
 
@@ -213,7 +221,7 @@ Using the mixed area formula from above:
 ~~~~
 
 # the sediment area above the thermocline using the median of the observed Kd  
-obs.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * median(GTH91.case.ms$Kd) + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
+obs.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.current + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
 
 # using the low est for 1 - 7 d warming
 low1.mix.A <- GTH91.case.ms$Area - (GTH91.case.ms$Area * (1 - (-3.08 * Kd.low[1] + 0.04 * GTH91.case.ms$Area + 0.067 * GTH91.case.ms$Julian -7.08)/z.max)^GTH91.alpha)
@@ -251,7 +259,7 @@ points(high5.mix.A ~ GTH91.case.ms$Julian, pch = 16)
 points(high6.mix.A ~ GTH91.case.ms$Julian, pch = 16)
 points(high7.mix.A ~ GTH91.case.ms$Julian, pch = 16)
 abline(h = 0)
-legend(170, 1, c("Median Observed Kd", "0.5 mg/L DOC inc. per deg. C", "2.3 mg/L DOC inc. per deg. C"), pch = c(1, 1, 16), col = c(4, 1, 1))
+legend(170, 1, c("Current Est. Kd", "0.5 mg/L DOC inc. per deg. C", "2.3 mg/L DOC inc. per deg. C"), pch = c(1, 1, 16), col = c(4, 1, 1))
 
 ~~~~
 
@@ -273,17 +281,21 @@ Multiplying these extremes by `obs.mix.A * 10000`, which is the mixed area (conv
 
 SOD estimates in mmol O2/d
 
-    epi.SOD.temp0
-    [1]  44439.13  62030.56  76677.06  99746.36 113902.77 126507.72  65641.82
-    [8]  82313.98  91898.07 105745.08 124374.50
+~~~~
 
-    epi.SOD.temp1
-    [1]  45896.54  64064.90  79191.73 103017.61 117638.29 130656.63  67794.59
-    [8]  85013.53  94911.93 109213.06 128453.45
+> epi.SOD.temp0
+ [1]  28761.49  45694.67  59750.32  81799.26  95267.86 107215.69  49164.04
+ [8]  65148.56  74311.33  87512.67 105196.83
 
-    epi.SOD.temp6
-    [1]  53183.61  74236.57  91765.12 119373.87 136315.89 151401.18  78558.44
-    [8]  98511.25 109981.24 126552.98 148848.19
+> epi.SOD.temp1
+ [1]  29704.75  47193.26  61709.88  84481.92  98392.23 110731.90  50776.41
+ [8]  67285.15  76748.42  90382.71 108646.84
+
+> epi.SOD.temp6
+ [1]  34421.01  54686.20  71507.65  97895.24 114014.11 128312.97  58838.26
+ [8]  77968.11  88933.88 104732.90 125896.85
+
+~~~~
 
 ### Convert epiliminion SOD to whole-lake measurements
 
@@ -306,24 +318,29 @@ This assumes that the temperature changes do not alter the conditions of the hyp
 
 SOD estimates in mmol O2/d
 
-    wholeLake.SOD.temp0
-    [1] 229847.7 239683.8 247873.2 260772.2 268687.6 275735.5 241703.0 251025.0
-    [9] 256383.9 264126.3 274542.7
+~~~~
 
-    wholeLake.SOD.temp1
-    [1] 231305.1 241718.1 250387.9 264043.4 272423.1 279884.4 243855.7 253724.6
-    [9] 259397.7 267594.3 278621.7
+> wholeLake.SOD.temp0
+ [1] 221081.7 230549.7 238408.8 250737.2 258268.0 264948.6 232489.6 241427.1
+ [9] 246550.4 253931.8 263819.7
 
-    wholeLake.SOD.temp6
-    [1] 238592.2 251889.8 262961.3 280399.7 291100.7 300629.0 254619.6 267222.3
-    [9] 274467.0 284934.2 299016.4
+> wholeLake.SOD.temp1
+ [1] 222024.9 232048.3 240368.3 253419.9 261392.4 268464.8 234101.9 243563.7
+ [9] 248987.5 256801.9 267269.7
+
+> wholeLake.SOD.temp6
+ [1] 226741.2 239541.2 250166.1 266833.2 277014.3 286045.8 242163.8 254246.7
+ [9] 261173.0 271152.0 284519.8
+
+~~~~
 
 ##### Figure; Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature without a change in transparency/thermocline depth.
 
-    jpeg("./output/whole_lake_SOD_temp.jpg")
+
     boxplot(wholeLake.SOD.temp0, wholeLake.SOD.temp1, wholeLake.SOD.temp6, axes = F, ylab ="SOD (mmol O2/d", xlab = "Change in Temperature")
     axis(2)
     axis(1, c("0 dC", "1 dC", "6 dC"), at = c(1, 2, 3))
+    dev.copy(jpeg, "./output/whole_lake_SOD_temp.jpg")
     dev.off()
 
 ![Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature without a change in transparency/thermocline depth.](../output/whole_lake_SOD_temp.jpg)
@@ -346,13 +363,17 @@ The SOD above the thermocline for the 6 degree temp. increase, including the cha
 
 #### Output
 
-    epi.SOD.tempTrans1
-    [1]  23817.99  41072.03  55379.45  77793.14  91464.06 103576.70  44604.83
-    [8]  60870.55  70185.76  83594.41 101531.02
+~~~~
 
-    epi.SOD.tempTrans6
-    [1]     0.00 13515.65 29022.51 53177.79 67819.45 80727.95 17350.55 34956.44
-    [9] 44999.27 59399.98 78552.32
+> epi.SOD.tempTrans1
+ [1]  23817.99  41072.03  55379.45  77793.14  91464.06 103576.70  44604.83
+ [8]  60870.55  70185.76  83594.41 101531.02
+
+> epi.SOD.tempTrans6
+ [1]     0.00 13515.65 29022.51 53177.79 67819.45 80727.95 17350.55 34956.44
+ [9] 44999.27 59399.98 78552.32
+
+~~~~
 
 ### Calculate the change in whole-lake SOD with warming and change in transparency/thermocline depth
 
@@ -367,14 +388,17 @@ The negative epi area is changed to 0 as above.
 
 #### Output
 
-    hypo.SOD.tempTrans1
-    [1] 204999.0 204998.2 204997.6 204996.7 204996.1 204995.6 204998.1 204997.4
-    [9] 204997.0 204996.4 204995.7
+~~~~
 
-    hypo.SOD.tempTrans6
-    [1] 205000.0 200021.2 194308.9 185410.7 180017.1 175261.9 198608.5 192123.0
-    [9] 188423.4 183118.6 176063.4
+> hypo.SOD.tempTrans1
+ [1] 194833.0 187468.0 181360.7 171793.1 165957.6 160787.1 185959.9 179016.7
+ [9] 175040.4 169316.8 161660.4
 
+> hypo.SOD.tempTrans6
+ [1] 205000.0 200021.2 194308.9 185410.7 180017.1 175261.9 198608.5 192123.0
+ [9] 188423.4 183118.6 176063.4
+
+~~~~
 
 Calculate the whole-lake SOD as the sum of the epi and hypo SOD
 
@@ -384,33 +408,30 @@ Calculate the whole-lake SOD as the sum of the epi and hypo SOD
 
 #### Output
 
-    wholeLake.SOD.tempTrans1
-    [1] 228817.0 246070.3 260377.1 282789.8 296460.2 308572.3 249602.9 265868.0
-    [9] 275182.8 288590.8 306526.7
+~~~~
 
-    wholeLake.SOD.tempTrans6
-    [1] 205000.0 213536.8 223331.4 238588.5 247836.5 255989.9 215959.1 227079.4
-    [9] 233422.7 242518.6 254615.7
+> wholeLake.SOD.tempTrans1
+ [1] 218651.0 228540.0 236740.1 249586.3 257421.6 264363.8 230564.8 239887.3
+ [9] 245226.2 252911.2 263191.4
 
-    
+> wholeLake.SOD.tempTrans6
+ [1] 205000.0 213536.8 223331.4 238588.5 247836.5 255989.9 215959.1 227079.4
+ [9] 233422.7 242518.6 254615.7
+
+~~~~
+
 ##### Figure; Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.
 
-    jpeg("./output/whole_lake_SOD_temp_trans.jpg")
-    par(las = 1, mar=c(4, 4.5, 4, 4))
-    boxplot(wholeLake.SOD.temp0/1000, wholeLake.SOD.temp1/1000, wholeLake.SOD.tempTrans1/1000, wholeLake.SOD.temp6/1000,  wholeLake.SOD.tempTrans6/1000, col = c(0, 0, 8, 0, 8), axes = F, ylab = expression(paste("SOD (mol d"^{-1},")")), xlab = "Climate Warming")
-    axis(2)
-    axis(1, c("None", "1 degr. C", "6 degr. C"), at = c(1, 2.5, 4.5))
-    legend(0.5, 300, c("Warming Only", "Warming + Transparency Change"), pch = c(0, 15), col = c(1, 8))
-    box()
-    dev.off()
 
-    pdf("./output/whole_lake_SOD_temp_trans.pdf")
     par(las = 1, mar=c(4, 4.5, 4, 4))
     boxplot(wholeLake.SOD.temp0/1000, wholeLake.SOD.temp1/1000, wholeLake.SOD.tempTrans1/1000, wholeLake.SOD.temp6/1000,  wholeLake.SOD.tempTrans6/1000, col = c(0, 0, 8, 0, 8), axes = F, ylab = expression(paste("SOD (mol d"^{-1},")")), xlab = "Climate Warming")
     axis(2)
     axis(1, c("None", "1 degr. C", "6 degr. C"), at = c(1, 2.5, 4.5))
-    legend(0.5, 300, c("Warming Only", "Warming + Transparency Change"), pch = c(0, 15), col = c(1, 8))
+    legend(0.5, 287, c("Warming Only", "Warming + Transparency Change"), pch = c(0, 15), col = c(1, 8), cex = 0.8)
     box()
+    dev.copy(jpeg, "./output/whole_lake_SOD_temp_trans.jpg")
+    dev.off()
+    dev.copy(pdf, "./output/whole_lake_SOD_temp_trans.pdf")
     dev.off()
 
 ![Plot of the change in whole-lake SOD (mmol O2/d) in lake GTH 91 following a 0, 1, or 6 degree increase in temperature with and without a change in transparency/thermocline depth.](../output/whole_lake_SOD_temp_trans.jpg)
@@ -433,39 +454,55 @@ With Warming and trans change
 
 ##### 1 degree increase warming only
 
-    median(wholeLake.SOD.temp0)
-    [1] 256383.9
+~~~~
+>     median(wholeLake.SOD.temp0)
+[1] 246550.4
 
-    median(wholeLake.SOD.temp1)
-    [1] 259397.7
+>     median(wholeLake.SOD.temp1)
+[1] 248987.5
 
-    perc.change.temp1
-    [1] 1.175527
+>     perc.change.temp1
+[1] 0.9884761
+
+~~~~
+
 
 ##### 6 degree increase warming only
 
-    median(wholeLake.SOD.temp6)
-    [1] 274467
+~~~~
 
-    perc.change.temp6
-    [1] 7.053162
+>     median(wholeLake.SOD.temp6)
+[1] 261173
+
+>     perc.change.temp6
+[1] 5.930856
+    
+~~~~
 
 ##### 1 degree increase warming and trans change
 
-    median(wholeLake.SOD.tempTrans1)
-    [1] 245226.2
+~~~~
 
-    perc.change.tempTrans1
-    [1] -4.351939
+>     median(wholeLake.SOD.tempTrans1)
+[1] 245226.2
 
+>     perc.change.tempTrans1
+[1] -0.5370996
+
+~~~~
+    
 ##### 6 degree increase warming and trans change
 
-    median(wholeLake.SOD.tempTrans6)
-    [1] 233422.7
+~~~~
 
-    perc.change.tempTrans6
-    [1] -8.955769
-    
+>     median(wholeLake.SOD.tempTrans6)
+[1] 233422.7
+
+>     perc.change.tempTrans6
+[1] -5.324549
+
+~~~~
+       
 ## Variables
 
 * temp.incr = a vetor of temperature increases in 1 deg C incremnets that approxomates the range of 'likely' temperature increases from Gudsaz et al 2010 which report a range of increases from 1.1 to 6.4
@@ -492,9 +529,13 @@ With Warming and trans change
 
 * Kd.DOC.slope = the intercept of the Kd by DOC linear model for the 2008 survey
 
-* Kd.high = a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the high Keller et al 2008 estimate
+* GTH91.DOCmgL.Jul2009 = the DOC concentration of Lake GTH 91 in early July 2009 (mg L^-1), SCW unpub data.
 
-* Kd.low = a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the low Keller et al 2008 estimate
+* Kd.current = the estimated Kd value of Lake GTH 91 using the `GTH91.DOCmgL.Jul2009` DOC value (m^-1).
+
+* Kd.high = a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the high Keller et al 2008 estimate (m^-1)
+
+* Kd.low = a vector of the estimated Kd values in GTH 91 across a 1 -7 degr warming for the increase in DOC from the low Keller et al 2008 estimate (m^-1)
 
 * obs.mix.A = the area of sediment above the thermocline (ha) estimated using the median Kd value observed in the GTH 91 surveys
 

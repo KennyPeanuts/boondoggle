@@ -60,7 +60,11 @@
 2. Changed the methods to indicate that we used the low Keller estimate
 3. Included the SCW DOC measurement in the case study methods.
 4. Changed the description of how the DOC and Kd were calculated for the case study to reflect the new analysis.
-5.
+
+## 18 July 2013
+1.  
+
+
 ##########################################################################################
 
 # Description of changes for reviewers
