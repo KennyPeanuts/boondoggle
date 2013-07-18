@@ -56,8 +56,6 @@ F-statistic: 35.05 on 2 and 42 DF,  p-value: 1.115e-09
 
     load("./data/GTH91.case.ms")
 
-~~~~
-
 ### Define the model:
 
 Thermocline Depth = -2.18072 + Kd * -4.58008 + Julian Day * 0.04947
