@@ -74,3 +74,51 @@ F-statistic:  35.4 on 3 and 41 DF,  p-value: 1.862e-11
     dev.off()
 
 ![Plot of actual TD, modeled TD, and TD modeled with median Kd by Julian Day in lake GTH 91](../output/TD_by_Julian.png)
+
+### Generate predicted TD using the predicted Kd values from the DOC concentration for 1 and 6 degr. C warming
+
+In the previous model I used the median Kd value and then added to it but in the revised model I used the Kd value predicted from the DOC concentration in lake GTH 91 (SCW 2009 estimate)
+
+    predTD.Kd.low1 <- (Kd.low[1] * -3.08) + (GTH91.case.ms$Julian * 0.067) + (GTH91.case.ms$Area * 0.04) - 7.08
+    predTD.Kd.low6 <- (Kd.low[6] * -3.08) + (GTH91.case.ms$Julian * 0.067) + (GTH91.case.ms$Area * 0.04) - 7.08
+
+#### Output
+
+~~~~
+
+> predTD.Kd.low1
+ [1] 0.9673031 1.6373031 2.1733031 2.9773031 3.4463031 3.8483031 1.7713031
+ [8] 2.3743031 2.7093031 3.1783031 3.7813031
+> predTD.Kd.low6
+ [1] -0.1901609  0.4798391  1.0158391  1.8198391  2.2888391  2.6908391
+ [7]  0.6138391  1.2168391  1.5518391  2.0208391  2.6238391
+
+~~~~
+
+### Plot with the 1 and 6 TD predictions
+
+    par(las = 1, cex = 1.2)
+    plot(TD ~ Julian, data = GTH91.case.ms, ylim = c(0, 6), xlim = c(170, 220), xlab = "Julian Day", ylab = "Thermocline Depth (m)", pch = 16, lwd = 1.5)
+    points(predTD.medianKd ~ Julian, data = GTH91.case.ms, pch = 1)
+    points(predTD.Kd.low1 ~ Julian, data = GTH91.case.ms, pch = 2)
+    points(predTD.Kd.low6 ~ Julian, data = GTH91.case.ms, pch = 0)
+    abline(lm(TD ~ Julian, data = GTH91.case.ms), lwd = 1.5)
+    abline(lm(predTD.medianKd ~ Julian, data = GTH91.case.ms), lty = 3, lwd = 1.5)
+    abline(lm(predTD.Kd.low1 ~ Julian, data = GTH91.case.ms), lty = 3, lwd = 1.5)
+    abline(lm(predTD.Kd.low6 ~ Julian, data = GTH91.case.ms), lty = 3, lwd = 1.5)
+    dev.copy(png, "./output/TD_by_Julian_mods.png")
+    dev.off()
+    dev.copy(pdf, "./output/TD_by_Julian_mods.pdf")
+    dev.off()
+
+Figure of the actual TD and all modeled TD by Julian Day in lake GTH 91. Closed circles are the actual TD, open circles are the estimated TD using the median Kd, open triangles are the estimated TD using the Kd predicted for 1 degree warming, the open squares are the estimated TD using the Kd predicted for 6 degrees warming.
+
+![Plot of actual TD and all modeled TD by Julian Day in lake GTH 91](../output/TD_by_Julian_mods.png)
+
+### Plot of the mixed area of the models
+
+    plot(obs.mix.A/Area * 100 ~ Julian, data = GTH91.case.ms, ylim = c(0, 40))
+    points(Mix.Area/Area * 100 ~ Julian, data = GTH91.case.ms, pch = 16)
+    points(low1.mix.A/Area * 100 ~ Julian, data = GTH91.case.ms, pch = 2)
+    points(low6.mix.A/Area * 100 ~ Julian, data = GTH91.case.ms, pch = 2)
+
