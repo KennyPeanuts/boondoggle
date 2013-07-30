@@ -61,8 +61,11 @@
 3. Included the SCW DOC measurement in the case study methods.
 4. Changed the description of how the DOC and Kd were calculated for the case study to reflect the new analysis.
 
-## 18 July 2013
-1.  
+## 30 July 2013
+1. Re-wrote the methods of the case study model to reflect the modifications to the analysis
+ a. the range in temperature was added to the methods
+ b. the bathymetry methods were moved to after the imboden model for clarity
+ 
 
 
 ##########################################################################################

@@ -119,7 +119,7 @@ In the previous model I used the median Kd value and then added to it but in the
     dev.copy(pdf, "./output/TD_by_Julian_mods.pdf")
     dev.off()
 
-Figure of the actual TD and all modeled TD by Julian Day in lake GTH 91. Closed circles are the actual TD, open circles are the estimated TD using the median Kd, open triangles are the estimated TD using the Kd predicted for 1 degree warming, the open squares are the estimated TD using the Kd predicted for 6 degrees warming.
+Figure of the actual TD and all modeled TD by Julian Day in lake GTH 91. Closed circles are the actual TD, open circles are the estimated TD using the current Kd, open triangles are the estimated TD using the Kd predicted for 1 degree warming, the open squares are the estimated TD using the Kd predicted for 6 degrees warming.
 
 ![Plot of actual TD and all modeled TD by Julian Day in lake GTH 91](../output/TD_by_Julian_mods.png)
 
