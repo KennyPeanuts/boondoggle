@@ -263,6 +263,26 @@ legend(170, 1, c("Current Est. Kd", "0.5 mg/L DOC inc. per deg. C", "2.3 mg/L DO
 
 ~~~~
 
+#### Output
+
+The range in of sediment areas (ha) above the thermocline in GTH 91 under current conditions, 1 dC warming, and 6 dC warming.
+
+~~~~
+
+> obs.mix.A
+ [1] 0.1546317 0.2456703 0.3212383 0.4397809 0.5121928 0.5764284 0.2643228
+ [8] 0.3502611 0.3995233 0.4704982 0.5655744
+
+> low1.mix.A
+ [1] 0.1239875 0.2138054 0.2882845 0.4049617 0.4761273 0.5391812 0.2321959
+ [8] 0.3168691 0.3653606 0.4351609 0.5285321
+
+> low6.mix.A
+ [1] -0.02365817  0.06071721  0.13037966  0.23889396  0.30466961  0.36265924
+ [7]  0.07794498  0.15703702  0.20215307  0.26684628  0.35288553
+
+~~~~
+
 ![Figure of the area (ha) of sediment area above the thermocline across 1-7 dC warming](../output/prop_sed_above_td.pdf)
 
 ## Calculate the change in whole-lake SOD with just the change in temperature

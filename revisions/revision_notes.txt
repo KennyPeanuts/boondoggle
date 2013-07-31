@@ -65,7 +65,9 @@
 1. Re-wrote the methods of the case study model to reflect the modifications to the analysis
  a. the range in temperature was added to the methods
  b. the bathymetry methods were moved to after the imboden model for clarity
- 
+
+## 31 July 2013
+1.  
 
 
 ##########################################################################################
