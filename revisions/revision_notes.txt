@@ -67,7 +67,8 @@
  b. the bathymetry methods were moved to after the imboden model for clarity
 
 ## 31 July 2013
-1.  
+1. Added the range of % sediment area above the thermocline under estimated Kd to the Results
+2. Finished case study mods to the results and discussion 
 
 
 ##########################################################################################
