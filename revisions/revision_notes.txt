@@ -94,6 +94,9 @@ Reviewer D suggests that we incorporate a more detailed estimate of the climate 
 Reviewer D feels that we do not adequately frame the conclusions of the case study with respect to the limitations of the methods used and that our conclusions are too definitive.  To rectify this, we acknowledge that our results from the case study are based on limited data in the discussion and again describe the limited scope in which the results should be interpreted (ln 432).  
 
 Editor requested more discussion of the lack of correlation between the DOC and Kd in the 2007 survey.  We have added additional explanation regarding the lack of correlation between the DOC and Kd in the 2007 survey but we are reluctant to speculate to broadly given that we do not have the data needed to support this speculation.  Previous research has shown a very strong relationship between DOC concentration and Kd in oligotrophic lakes (which is why we did not measure the cDOM initially) and our 2008 data support these previous observations.  Given this we feel that the 2007 data are an isolated observation and do not reflect general patterns for arctic lakes.  Although we lack the data to test this we speculate that the reason for the lack of correlation is due to very low rainfall in 2007 which increased lake residence times and resulted in greater than normal amounts of photobleaching of the DOC.  However since we did not collect any data that could be used to support this hypothesis we decided not to include it in the paper.
+
+Reviewer C requests additional information on the sediment characteristics of the lakes.  Unfortunately we did not collect detailed sediment information on the lakes used in the survey and only limited information on the lakes used in the incubation studies.  Some basic sediment information was collected from lakes in the region as part of KF's doctoral work but the lakes in this survey were different from the lakes surveyed in this paper.  We have added this information on the organic matter content of the surface sediments and dry bulk density from the lakes in the other survey to the study site description.  The percent organic matter for the surface sediments of the lakes used in the incubations was also added to the methods section describing the incubation experiments.
+
 ##########################################################################################
 
 # Reviewer Comments
@@ -141,18 +144,19 @@ introduction. I only miss a description of sediment/bottom characteristics -
 erosion, transport and accumulation bottoms have quite a different content
 of organic matter and are distributed with depth
 
-2. The methods include a lake survey, sediment incubations and a case study
+[X] 2. The methods include a lake survey, sediment incubations and a case study
 - good. My concern here is the same - there is no care taken about different
 sediment properties in the case study nor in the Sediment oxygen demand
 (SOD) experiments.
 
-3. The results are presented in a proper and concise way but I still miss
+[X] 3. The results are presented in a proper and concise way but I still miss
 differences in sediment properties above and below the thermocline. There is
 no information about content of organic matter, loss on ignition, water
 content etc from the sediments used in the experiments.
 
 4. Discussion suffers from the same lack of information and care about
 sediment characteristics
+
 
 ------------------------------------------------------
 
