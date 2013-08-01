@@ -70,6 +70,8 @@
 1. Added the range of % sediment area above the thermocline under estimated Kd to the Results
 2. Finished case study mods to the results and discussion 
 
+## 1 Aug 2013
+1. Added additional explanation about the lack of correlation between DOC and Kd in the 2007 survey (ln 357)
 
 ##########################################################################################
 
@@ -87,10 +89,11 @@ Reviewer D is concerned that we describe the predicted thermocline depths by the
 
 Reviewer D questions the use of a relationship between SOD and temperature and SOD and oxygen availability based on one sediment incubation experiment to estimate the SOD of the whole lake, given that we identify substantial patch-scale variation in SOD.  We of course, recognize the limitations associated with extrapolating from experimental results to whole systems but we feel that this is appropriate given that the vast majority of the variation in SOD that we observed in the incubation experiment was due to variation in temperature and oxygen.  We therefore presume that patch-scale variation in temperature and oxygen in the lake would result in variation in patch-scale variation in SOD.  The purpose of the model was to evaluate the sensitivity of the whole lake SOD to changes in the distribution of temperature and oxygen so we felt that it was reasonable to apply this simplified extrapolation from the incubation experiment. We add additional justification to the methods description of the case study SOD determination to indicate why it was necessary to estimate SOD from the incubation experiment (ln 212).   To clarify the intentions and the limitations of this approach we altered the description of patch-scale variation to make it clearer that we are attributing the variation to variation temperature and oxygen (ln 347).  Furthermore, we added additional introduction to the case study discussion to make its intended purpose cleared (ln 409).  
 
-Reviewer D suggests that we incorporate a more detailed estimate of the climate changes that will be experienced by the Arctic into our case study of the changes in lake GTH 91.  Our estimate of 3 deg. warming is based on a paper by  Gudasz et al. 2010 in which they report the most likely warming scenarios from 
+Reviewer D suggests that we incorporate a more detailed estimate of the climate changes that will be experienced by the Arctic into our case study of the changes in lake GTH 91.  In response to this concern we reanalyzed the case study data to include a 1 - 6 degree range of warming.  This is the warming scenario considered to be "likely" by the IPCC. 
 
 Reviewer D feels that we do not adequately frame the conclusions of the case study with respect to the limitations of the methods used and that our conclusions are too definitive.  To rectify this, we acknowledge that our results from the case study are based on limited data in the discussion and again describe the limited scope in which the results should be interpreted (ln 432).  
 
+Editor requested more discussion of the lack of correlation between the DOC and Kd in the 2007 survey.  We have added additional explanation regarding the lack of correlation between the DOC and Kd in the 2007 survey but we are reluctant to speculate to broadly given that we do not have the data needed to support this speculation.  Previous research has shown a very strong relationship between DOC concentration and Kd in oligotrophic lakes (which is why we did not measure the cDOM initially) and our 2008 data support these previous observations.  Given this we feel that the 2007 data are an isolated observation and do not reflect general patterns for arctic lakes.  Although we lack the data to test this we speculate that the reason for the lack of correlation is due to very low rainfall in 2007 which increased lake residence times and resulted in greater than normal amounts of photobleaching of the DOC.  However since we did not collect any data that could be used to support this hypothesis we decided not to include it in the paper.
 ##########################################################################################
 
 # Reviewer Comments
@@ -226,7 +229,7 @@ column during their incubations, although there was no attempt to control
 oxygen availability during those incubations. They then go on to use these
 data to calculate below thermocline SOD rates for the whole lake!
 
-[ ]6.      Their future projections for climate change impacts are based on one Kd
+[X]6.      Their future projections for climate change impacts are based on one Kd
 value (which in turn was based on one study from literature) and one
 possible future temperature increase based on one other study.  I suggest
 they at least base these temperature estimates on climate change projections
@@ -283,7 +286,7 @@ Editor:
 I share the opinion of Reviewer D that the weakest part of this work is the
 prediction of sediment oxygen demand (SOD) under changed climate. 
 
-[ ]My main concern is that variability in Kd either could (in 2008) or could not be (in
+[X] My main concern is that variability in Kd either could (in 2008) or could not be (in
 2007) attributed to DOC during the lake surveys. The reasons of this
 difference have not been clarified. ("Assuming that light attenuation is
 primarily the result of cDOM, these results suggest that there was a decoupling of the bulk DOC concentration from the chromophoric (i.e., light
