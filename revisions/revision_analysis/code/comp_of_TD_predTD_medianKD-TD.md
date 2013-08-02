@@ -192,3 +192,7 @@ F-statistic: 1.164e+31 on 1 and 9 DF,  p-value: < 2.2e-16
     points(low1.mix.A/Area * 100 ~ Julian, data = GTH91.case.ms, pch = 2)
     points(low6.mix.A/Area * 100 ~ Julian, data = GTH91.case.ms, pch = 2)
 
+
+
+
+

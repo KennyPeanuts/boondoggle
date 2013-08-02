@@ -283,9 +283,7 @@ here? This is not mentioned but should be addressed.
 tense is used to describe results, and then in the following sentence,
 present tense is used.
 
--------------------------------------------------------
-
-------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 Editor:
 I share the opinion of Reviewer D that the weakest part of this work is the
 prediction of sediment oxygen demand (SOD) under changed climate. 
