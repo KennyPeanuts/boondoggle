@@ -1,0 +1,100 @@
+
+Dear Dr. Istvanovics,
+
+We have revised our manuscript previously titled: "The effect of climate
+change on sediment organic matter processing in lakes: The role of changing
+transparency." for resubmission and review. 
+
+We have made substantial changes to the paper (detailed below) in response to your comments and the comments of the reviewers that we focus on the relationship between sediment oxygen demand and transparency and deemphasize the climate change component of the paper.  Briefly we rewrote the title, introduction and discussion to focus more on the relationship between transparency and sediment oxygen demand.  We clarified that the role of the case study was to illustrate the sensitivity of whole lake sediment oxygen demand to changes in stratification depth and not to reproduce future climate conditions. Finally we reanalyzed the case study data with a range of temperatures and presented the results in a different format to better illustrate our conclusions.  A detailed description of the changes made to the paper is found below, please let me know if you have any questions.
+
+Manuscript changes in detail: 
+=============================
+
+Editor Comments: 
+----------------
+
+In response to the request for more discussion of the lack of correlation between the DOC and Kd in the 2007 survey.  We have added additional explanation regarding the lack of correlation between the DOC and Kd in the 2007 survey (lines 366 - 371) but we are reluctant to speculate to broadly given that we do not have the data needed to support this speculation.  Previous research has shown a very strong relationship between DOC concentration and Kd in oligotrophic lakes (which is why we did not measure the cDOM in 2007) and our 2008 data support these previous observations.  Given this we feel that the 2007 data are an isolated observation and do not reflect general patterns for arctic lakes.  Although we lack the data to test this we speculate that the reason for the lack of correlation may be due to very low rainfall in 2007, which increased lake residence times and resulted in greater than normal amounts of photobleaching of the DOC.  However since we did not collect any data that could be used to support this hypothesis we decided not to include it in the paper.
+
+In response to the comment that we focus on the hypothesis that sediment oxygen demand is affected by transparency and then discuss the effects of climate change in the discussion we removed much of the references to climate change from the introduction (lines 44, 53, 55, 63, and 67; original manuscript). To provide context for our hypotheses we moved some of the discussion of observed changes in lake transparency to the introduction (lines 67 - 81; revised manuscript).  Furthermore we rewrote the description of the hypotheses at the end of the introduction to de-emphasize the climate change aspect of the paper and highlight the test of the connections between transparency and SOD (lines 82 - 90; revised manuscript).
+
+We added clarification to the discussion indicating that the role of the case-study in lake GTH 91 was to assess the sensitivity of the relationship between transparency and SOD.  We reserved our conclusions about the relevance of our findings to climate change to the final paragraph of the discussion (lines 467 - 473; revised manuscript).
+
+Reviewer C Comments:
+--------------------
+
+Reviewer C requests additional information on the sediment characteristics of the lakes.  Unfortunately we did not collect detailed sediment information on the lakes used in the survey and only limited information on the lakes used in the incubation studies.  Some basic sediment information was collected from lakes in the region as part of KF's doctoral work but the lakes in this survey were different from the lakes surveyed in this paper.  We have added this information on the organic matter content of the surface sediments and dry bulk density from the lakes in the other survey to the study site description (lines 98 - 101; revised manuscript).  The percent organic matter for the surface sediments of the lakes used in the incubations was also added to the methods section describing the incubation experiments (lines 136 - 140; revised manuscript).
+
+
+Reviewer D Comments:
+--------------------
+
+Reviewer D questioned the fact that oxygen concentration was not explicitly controlled during the measurement of anoxic mineralization.  The lakes in this region of the arctic and those included in the study do not regularly go anoxic and thus we were not assessing the effect of anoxic conditions on mineralization but rather evaluating the relationship between oxygen concentration of the overlying water and SOD.  We tested the effect of oxygen availability on SOD by manipulating the availability of oxygen by extending the incubation time.  To clarify this point we added additional text to the methods section on the sediment incubations (lines 170 - 176; revised manuscript).
+
+These changes also addresses Reviewer D's concern that the results of our incubations are not representative of the conditions found in the hypolimnion of GTH 91 in the case study.  The hypolimnion of GTH 91 was not anoxic during any of the times that we sampled the lake (see Table 5) and thus the SOD measured under reduced oxygen availability in the incubation experiment should be informative for the conditions in the hypolimnion of GTH 91.
+
+Reviewer D notes that the factors included in the linear model of thermocline depth by Kd, Area, and Julian Day were somewhat collinear, which can bias the independent estimation of the slope for each term.  We acknowledge that there is some collinearity between the predictors but it is fairly modest.  The R^2 of the relationship between Kd and Area is only 0.1 and the R^2 of the relationship between Kd and Julian Day is only 0.2.  While any collinearity between the predictors makes it impossible to completely independently estimate their effects, this modest collinearity should still make it possible to get a reasonable estimate of the relationship between the predictors and the thermocline depth.  Furthermore, previous studies have shown that each of the predictors included in the model are important drivers of thermocline depth.  Lake area can affect thermocline depth through variation in wind mixing intensity related to fetch (Gorham and Boyce 1989). Time since stratification (i.e., Julian Day) can affect thermocline depth via the continued deepening of the thermocline over time (Blanton 1973, Wetzel 2001). Given the modest collinearity between the predictors, the prior evidence that these factors should be important for estimating thermocline depth, and the accuracy with which the model estimates the thermocline depth of GTH 91, we feel justified in using this model.  
+
+In response to these concerns, we explicitly describe our test of the collinearity the predictors in the Methods (lines 182 - 184). We clarify the limitations of our model and our justification for using this model in the model description in the methods (lines 244 - 249; revised manuscript).  Finally, we report the collinearity in the results (line 277; revised manuscript). 
+
+Reviewer D expresses concern that Julian Day is significant in the model despite the fact that there are only 2 julian days in the original survey.  Due to the well established relationship between thermocline depth and time since stratification, we feel justified considering the time in the summer as a factor affecting thermocline depth.  However with only 2 points it is possible that we are finding a linear relationship when there is another shape to the change in thermocline depth with time.  We do not have additional dates from the survey lakes but the actual change in thermocline depth with Julian day in GTH 91 (Fig. 8 solid line, closed circles) shows a very linear change in thermocline depth with julian day.  Given this, it seems reasonable to assume that relationship between thermocline depth and julian day in the survey lakes is also linear.
+
+Reviewer D is concerned that we describe the predicted thermocline depths by the model as accurate but do not include a measure of fit.  The reanalysis of the case-study data changed the way we treat the fit of the model to the actual data.  Since we are now modeling the change in thermocline depth by Julian day using the Kd estimated from the observed DOC concentrations we are simply assessing whether the model reproduces the general patterns observed in GTH 91  We clarify this in the Discussion (lines 449 - 459; revised manuscript).
+
+Reviewer D questions the use of a relationship between SOD and temperature and SOD and oxygen availability based on one sediment incubation experiment to estimate the SOD of the whole lake, given that we identify substantial patch-scale variation in SOD.  We of course, recognize the limitations associated with extrapolating from experimental results to whole systems but we feel that this is appropriate given that the vast majority of the variation in SOD that we observed in the incubation experiment was due to variation in temperature and oxygen.  We therefore presume that patch-scale variation in temperature and oxygen in the lake would result in variation in patch-scale variation in SOD.  The purpose of the model was to evaluate the sensitivity of the whole lake SOD to changes in the distribution of temperature and oxygen so we felt that it was reasonable to apply this simplified extrapolation from the incubation experiment. We add additional justification to the methods description of the case study SOD determination to indicate why it was necessary to estimate SOD from the incubation experiment (line 256; revised manuscript).   To clarify the intentions and the limitations of this approach we altered the description of patch-scale variation to make it clearer that we are attributing the variation to variation in temperature and oxygen (line 394 - 397).  Furthermore, we added additional introduction to the case study discussion to make its intended purpose cleared (line 446).  
+
+Reviewer D suggests that we incorporate a more detailed estimate of the climate changes that will be experienced by the Arctic into our case study of the changes in lake GTH 91.  In response to this concern we reanalyzed the case study data to include a 1 - 6 degree range of warming.  This is the warming scenario considered to be "likely" by the IPCC.  This reanalysis required substantial rewrite of the methods, results, and discussion regarding the case study.  Given this, I have not included all of the line numbers where changes were made.  The changes also resulted in the new figures 8 and 9.  These figures now show the results of this reanalysis. 
+
+Reviewer D feels that we do not adequately frame the conclusions of the case study with respect to the limitations of the methods used and that our conclusions are too definitive.  To rectify this, we have rewritten the concluding paragraph to acknowledge that our results from the case study are based on limited data and again describe the limited scope in which the results should be interpreted (line 469 - 473).  
+
+Reviewer D also made some specific editorial suggestions.
+
+"I would also suggest that the title be changed."
+* The title has been changed
+
+"Methods, and figure and table legends need to clearly note the number
+of samples (n = ? for example for Figure 6).  The number of cores from each
+lake incubated at each temperature is not mentioned – this is essential
+information, since the future estimates are based on the variability of this
+unknown number of cores. Similarly, they state that ‘Temperature,
+irradiance and dissolved oxygen in lake GTH 91 were measured ‘as described
+above’ so was this on one date/sampling occasion in each year as part of
+the annual surveys? This is not clear."
+* The number of replicates was added to the descriptions of the incubation experiments and figures as suggested.
+* The dates of the GTH 91 environmental sampling was added to the methods as suggested.
+
+"They note that DOC concentrations have been increasing in several
+regions, and are projected to increase further.  They then select a median
+value for DOC concentrations based on a study of small Boreal Shield lakes
+for their future scenario, and, using the relationship between DOC
+concentration and Kd identified in the 2008 survey, predict the effect of an
+increase in Kd on SOD. This justification belongs in methods, not in the
+discussion."
+* The suggested changes to the description of the Kd estimation method were nullified in the reanalysis of the case-study but the relevant information in the new analysis is in the methods as suggested.
+
+"Similarly the future temperature increase of 3oC should be described
+and justified in the methods NOT in the discussion."
+* This information was added to the methods as suggested.
+
+"Correlation coefficients or coefficients of determination not given for
+data displayed in Figure 3?"
+* The correlation coefficients are provided for Figure 3 as suggested.
+
+"Would spatial autocorrelation be an issue in the statistical analysis
+here? This is not mentioned but should be addressed."
+* It is not clear in what aspect of the analysis the reviewer is concerned with spatial autocorrelation so this concern cannot be addressed specifically. 
+
+"There is an issue with mixture of tenses in places: sometimes past
+tense is used to describe results, and then in the following sentence,
+present tense is used."
+* The issues with verb tense were corrected where they were observed.
+
+
+
+
+    
+Sincerely, 
+
+Kenneth Fortino
+Department of Biological and Environmental Sciences
+Longwood University
+Farmville, VA
