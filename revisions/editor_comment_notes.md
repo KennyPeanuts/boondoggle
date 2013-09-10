@@ -4,12 +4,20 @@ file created 10 Sept. 2013
 
 ## Change Log
 
+10 Sept. 2013 - 
+1. Removed description of the case study from the methods, results, and discussion.
+2. Removed Figures 8 and 9 - since they refer to the case study
+3. Removed Table 6 since it reported the results of the case study
+4. Removed the reference to the meteorological data from the acknowledgments
+5. Moved discussion of specific Chl attenuation from results to discussion.  
+6. Added a caveat to the discussion of the effect of [O2] on SOD to the discussion the respond to the editor comment that the effect that we observed may be due to a temporal change in SOD and be independent of [DO].
 
 ## Responses to Editor Comments
 
 It was indicated that the relationship between thermocline depth and Kd may be better described using log transformed data.
 The log transformation does improve the relationship across all years.  The R2 of the transformed data is 0.65 while the R2 of the untransformed data is 0.52 (not shown).  When the data are analyzed by year the effec is not consistent.  In 2006, the transformation improves the R2 from 0.55 to 0.67.  However in 2007 and 2008 the tranformation reduces the R2 of the relationship from 0.36 to 0.33 and 0.51 to 0.48, respectively.
 
+In response to the observation that the change in SOD that was correlated with the temporal change in DO concentration could be due to an artifact of the longer incubation times and not DO we added a section to the discussion to indicate that this alternative interpretation is reasonable but that our measurements agree well with other published relationships between SOD and DO concentration in lakes.
 
 ## General Editor Comments
 
