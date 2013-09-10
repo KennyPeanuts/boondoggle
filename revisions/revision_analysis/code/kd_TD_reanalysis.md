@@ -45,7 +45,7 @@ F-statistic: 83.62 on 1 and 43 DF,  p-value: 1.213e-11
     dev.copy(png, "./output/logTD_by_logKd_allYrs.png")
     dev.off()
 
-![Relationship between TD and Kd following Log-10 transformation](./output/logTD_by_logKd_allYrs.png)
+![Relationship between TD and Kd following Log-10 transformation](../output/logTD_by_logKd_allYrs.png)
 
 Figure: Relationship between TD and Kd following Log-10 transformation
 
@@ -138,3 +138,10 @@ Multiple R-squared: 0.5138,	Adjusted R-squared: 0.4814
 F-statistic: 15.85 on 1 and 15 DF,  p-value: 0.001204 
 
 ~~~~
+
+### Conclusions
+
+The log transformation does inprove the relationship across all years.  The R2 of the transformed data is 0.65 while the R2 of the untransformed data is 0.52 (not shown).  When the data are analyzed by year the effec is not consistent.  In 2006, the transformation improves the R2 from 0.55 to 0.67.  However in 2007 and 2008 the tranformation reduces the R2 of the relationship from 0.36 to 0.33 and 0.51 to 0.48, respectively.
+
+Overall the changes are modest and suggest that a linear model is appropriate.
+
