@@ -17,11 +17,22 @@ file created 10 Sept. 2013
 2. Changed title as suggested
 3. Removed Arctic from key words
 4. Added clarification that light attenuation is due to the DOC + the pure water in discussion
+* commit
+5. Removed reference to the model from the introduction
+6. Changed the paper hypotheses to indicate the removal of the model.
+7. Added statement that sediment OM may be due to benthic algal production
+8. Added information to the discussion indicating the S-3 likely has higher benthic algal biomass.
+9. Added conclusions and implications section
+10. Made all minor editorial changes suggested by editor
+
+TODO
+1. merge lake maps
+2. rewrite abstract
 
 ## Responses to Editor Comments
 
 It was indicated that the relationship between thermocline depth and Kd may be better described using log transformed data.
-The log transformation does improve the relationship across all years.  The R2 of the transformed data is 0.65 while the R2 of the untransformed data is 0.52 (not shown).  When the data are analyzed by year the effec is not consistent.  In 2006, the transformation improves the R2 from 0.55 to 0.67.  However in 2007 and 2008 the tranformation reduces the R2 of the relationship from 0.36 to 0.33 and 0.51 to 0.48, respectively.
+The log transformation does improve the relationship across all years.  The R2 of the transformed data is 0.65 while the R2 of the untransformed data is 0.52 (not shown).  When the data are analyzed by year the effect is not consistent.  In 2006, the transformation improves the R2 from 0.55 to 0.67.  However in 2007 and 2008 the transformation reduces the R2 of the relationship from 0.36 to 0.33 and 0.51 to 0.48, respectively.
 
 In response to the observation that the change in SOD that was correlated with the temporal change in DO concentration could be due to an artifact of the longer incubation times and not DO we added a section to the discussion to indicate that this alternative interpretation is reasonable but that our measurements agree well with other published relationships between SOD and DO concentration in lakes.
 
