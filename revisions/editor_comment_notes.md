@@ -12,12 +12,20 @@ file created 10 Sept. 2013
 5. Moved discussion of specific Chl attenuation from results to discussion.  
 6. Added a caveat to the discussion of the effect of [O2] on SOD to the discussion the respond to the editor comment that the effect that we observed may be due to a temporal change in SOD and be independent of [DO].
 
+24 Sept. 2013 -
+1. Clarified that the initial oxygen concentration was used to assess the relationship between SOD and oxygen concentration.
+2. Changed title as suggested
+3. Removed Arctic from key words
+4. Added clarification that light attenuation is due to the DOC + the pure water in discussion
+
 ## Responses to Editor Comments
 
 It was indicated that the relationship between thermocline depth and Kd may be better described using log transformed data.
 The log transformation does improve the relationship across all years.  The R2 of the transformed data is 0.65 while the R2 of the untransformed data is 0.52 (not shown).  When the data are analyzed by year the effec is not consistent.  In 2006, the transformation improves the R2 from 0.55 to 0.67.  However in 2007 and 2008 the tranformation reduces the R2 of the relationship from 0.36 to 0.33 and 0.51 to 0.48, respectively.
 
 In response to the observation that the change in SOD that was correlated with the temporal change in DO concentration could be due to an artifact of the longer incubation times and not DO we added a section to the discussion to indicate that this alternative interpretation is reasonable but that our measurements agree well with other published relationships between SOD and DO concentration in lakes.
+
+You comment on the oxygen availability experiment methods that averaging the change in DO between the 2 time points would reduce the variation if we assume that the response was zero-order during the incubation.  I don't think that assumption is valid, which is why I used the sum.
 
 ## General Editor Comments
 
