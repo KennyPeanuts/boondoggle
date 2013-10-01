@@ -1,0 +1,40 @@
+
+Dear Dr. Istvanovics,
+
+We have revised our manuscript based on your comments. I provide detailed comments below but in summary, as you suggest we have removed the case study from the paper and discussed the implications of our findings with respect to climate change in a concluding section of the discussion called "Conclusions and Implications".  We did not include an estimate of the whole-lake SOD in lake GTH 91, since we felt that this estimate would only be of limited interest to researchers familiar with that lake and describing those calculations would require a lot of space.   
+
+We are in the process of getting the requested changes made to combine the maps in figures 1 and 2.
+
+I have uploaded the revised manuscript where is says Upload Author Version on the review section of the Author Submissions page.  Please let me know if this is not the correct procedure and I will be happy to do what is needed to resubmit.  The file is designated 597-3506-1-ED.DOCX.
+
+Manuscript changes in detail: 
+=============================
+1. The title was changed as you suggest (ln 2).
+
+2. The abstract was rewritten to reflect the changes in the manuscript (lns 24 - 30).
+
+3. The last paragraph of the introduction was rewritten to reflect the changes in the manuscript and remove the references to the case study (lns 80 - 87).
+
+4. You commented that the differences in sediment organic matter content may be due to differences in the amount of benthic algal biomass.  There is data in KF's dissertation that supports this hypothesis so we included this information in the paper (lns 97 - 99).
+
+5. We clarified that SOD was related to the initial oxygen concentration in the core incubation experiment (ln 192).
+
+6. The figures and tables are now referenced in the discussion where appropriate.
+
+7. We clarified that the measured light attenuation is due to the attenuation of pure water, DOM, and POM, including phytoplankton (lns 246 - 247 and ln 249).
+
+8. We moved the information about the specific light attenuation due to cholorphyll a to the discussion (lns 265 - 269).
+
+9. In response to your observation that the change in SOD which we attribute to the change DO concentration could be due to an artifact of the longer incubation times and not DO, we added a section to the discussion to indicate that this alternative interpretation is reasonable but that our measurements agree well with other published relationships between SOD and DO concentration in lakes (lns 304 - 309 and ln 315).
+
+10. We added a Conclusions and Implications section to indicate how our findings may affect the way lakes respond to climate change (lns 346 - 357).
+
+11. All of the editorial suggestions were incorporated in to the manuscript.
+
+    
+Sincerely, 
+
+Kenneth Fortino
+Department of Biological and Environmental Sciences
+Longwood University
+Farmville, VA

@@ -25,9 +25,16 @@ file created 10 Sept. 2013
 9. Added conclusions and implications section
 10. Made all minor editorial changes suggested by editor
 
+1 Oct. 2013 - 
+1. sent email to Toolik lake GIS to request map merge
+2. removed the case-study information from the abstract and added information about the implications of the results
+3. removed references that no longer apply to the reduced ms
+
+
 TODO
-1. merge lake maps
-2. rewrite abstract
+* merge lake maps
+* complete cover letter
+
 
 ## Responses to Editor Comments
 
