@@ -5,7 +5,7 @@ We have revised our manuscript based on your comments. I provide detailed commen
 
 We are in the process of getting the requested changes made to combine the maps in figures 1 and 2.
 
-I have uploaded the revised manuscript where is says Upload Author Version on the review section of the Author Submissions page.  Please let me know if this is not the correct procedure and I will be happy to do what is needed to resubmit.  The file is designated 597-3506-1-ED.DOCX.
+I have uploaded the revised manuscript where is says Upload Author Version on the review section of the Author Submissions page. The file is designated 597-3506-1-ED.DOCX.
 
 Manuscript changes in detail: 
 =============================
@@ -31,7 +31,10 @@ Manuscript changes in detail:
 
 11. All of the editorial suggestions were incorporated in to the manuscript.
 
-    
+12. The maps in figures 1 and 2 have been combined into a single map (Figure 1).
+
+13. To clarify the concern about the lack of an Error term in table 4 I added additional detail about the analysis that indicated that it was not a traditional ANOVA but a linear mixed model using REML (lns 193-194).  In this analysis the table only reports the significants tests for the fixed effects.  The table legend was also changed to reflect this.
+ 
 Sincerely, 
 
 Kenneth Fortino
